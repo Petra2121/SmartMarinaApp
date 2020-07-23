@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/splashLayout"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/logo_id"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_directions_boat_black_24dp"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textColor="@color/black"
+        android:layout_below="@+id/logo_id"
+        android:layout_centerHorizontal="true"
+        android:text="Smart Marina"
         android:textSize="30sp"
-        android:text="Smart Marina"/>
-</FrameLayout>
+        android:textColor="@color/colorPrimary"/>
+
+</RelativeLayout>

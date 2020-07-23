@@ -28,6 +28,99 @@
         android:label="LoginFragment" >
 
 
+        <action
+            android:id="@+id/action_loginFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.profico.smartmarina.ui.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" />
+    <fragment
+        android:id="@+id/homeScreenFragment"
+        android:name="com.profico.smartmarina.ui.HomeScreenFragment"
+        android:label="fragment_home_screen"
+        tools:layout="@layout/fragment_home_screen" >
+        <action
+            android:id="@+id/action_homeScreenFragment_to_shipsFragment"
+            app:destination="@id/shipsFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shipsFragment"
+        android:name="com.profico.smartmarina.ui.ShipsFragment"
+        android:label="fragment_ships"
+        tools:layout="@layout/fragment_ships" >
+        <action
+            android:id="@+id/action_shipsFragment_to_addShipFragment"
+            app:destination="@id/addShipFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addShipFragment"
+        android:name="com.profico.smartmarina.ui.AddShipFragment"
+        android:label="fragment_add_ship"
+        tools:layout="@layout/fragment_add_ship" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.profico.smartmarina.ui.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_myReservationsFragment"
+            app:destination="@id/myReservationsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_myInformationFragment"
+            app:destination="@id/myInformationFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_marinaInfoFragment"
+            app:destination="@id/marinaInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myReservationsFragment"
+        android:name="com.profico.smartmarina.ui.MyReservationsFragment"
+        android:label="fragment_my_reservations"
+        tools:layout="@layout/fragment_my_reservations" />
+    <fragment
+        android:id="@+id/myInformationFragment"
+        android:name="com.profico.smartmarina.ui.MyInformationFragment"
+        android:label="fragment_my_information"
+        tools:layout="@layout/fragment_my_information" />
+    <fragment
+        android:id="@+id/marinaInfoFragment"
+        android:name="com.profico.smartmarina.ui.MarinaInfoFragment"
+        android:label="fragment_marina_info"
+        tools:layout="@layout/fragment_marina_info" />
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.profico.smartmarina.ui.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/action_mapFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.profico.smartmarina.ui.PaymentFragment"
+        android:label="fragment_payment"
+        tools:layout="@layout/fragment_payment" >
+        <action
+            android:id="@+id/action_paymentFragment_to_successFragment"
+            app:destination="@id/successFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/successFragment"
+        android:name="com.profico.smartmarina.ui.SuccessFragment"
+        android:label="fragment_success"
+        tools:layout="@layout/fragment_success" />
 
 </navigation>

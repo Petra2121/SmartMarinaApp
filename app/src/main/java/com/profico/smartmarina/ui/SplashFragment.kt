@@ -18,6 +18,6 @@ class SplashFragment : BaseFragment() {
 
         Handler().postDelayed({
             findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToLoginFragment())
-        }, 2000)
+        }, 1000)
     }
 }

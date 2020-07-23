@@ -17,7 +17,7 @@
             android:src="@drawable/ic_directions_boat_black_24dp">
         </ImageView>
         <EditText
-            android:id="@+id/login_email"
+            android:id="@+id/login_username"
             android:layout_width="250dp"
             android:layout_height="36dp"
             android:layout_marginStart="20dp"

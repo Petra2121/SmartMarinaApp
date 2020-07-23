@@ -68,7 +68,11 @@
         android:id="@+id/addShipFragment"
         android:name="com.profico.smartmarina.ui.AddShipFragment"
         android:label="fragment_add_ship"
-        tools:layout="@layout/fragment_add_ship" />
+        tools:layout="@layout/fragment_add_ship" >
+        <action
+            android:id="@+id/action_addShipFragment_to_shipsFragment"
+            app:destination="@id/shipsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.profico.smartmarina.ui.ProfileFragment"

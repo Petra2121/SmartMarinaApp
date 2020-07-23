@@ -20,21 +20,26 @@ class LoginFragment : BaseFragment(), KoinComponent {
 
     override fun getLayout() = R.layout.fragment_login
 
-    override fun hasToolbar() = true
+    override fun hasToolbar() = false
 
     override fun setupView() {
         setToolbarTitle("Login")
-
-        //findNavController().navigate()
-
         login_button.setOnClickListener {
-            findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeScreenFragment())
+            val username = login_username.text.toString()
+            val pwd = login_password.text.toString()
+            if((username=="admin") && (pwd=="admin")){
+                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeScreenFragment())
+            }
+            else if((username=="")&&(pwd=="")){
+                Toast.makeText(requireActivity(), "Please fill in username and password", Toast.LENGTH_LONG).show()
+            }
+            else if (username != "admin") {
+                Toast.makeText(requireActivity(), "Wrong username", Toast.LENGTH_LONG).show()
+            } else if (pwd != "admin") {
+                Toast.makeText(requireActivity(), "Wrong password", Toast.LENGTH_LONG).show()
+            }
         }
-
-        /*btn_login.setOnClickListener {
-            val username = editText.text.toString()
-            Toast.makeText(requireActivity(), "Ime covika je: " + username, Toast.LENGTH_LONG).show()
-        }*/
+    }
     }
 
 
@@ -43,4 +48,3 @@ class LoginFragment : BaseFragment(), KoinComponent {
     fun callServer() {
         Repository().callServer("")
     }
-}

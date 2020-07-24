@@ -64,6 +64,12 @@
         <action
             android:id="@+id/action_shipsFragment_to_addShipFragment"
             app:destination="@id/addShipFragment" />
+        <argument
+            android:name="shipName2"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_shipsFragment_to_homeScreenFragment"
+            app:destination="@id/homeScreenFragment" />
     </fragment>
     <fragment
         android:id="@+id/addShipFragment"

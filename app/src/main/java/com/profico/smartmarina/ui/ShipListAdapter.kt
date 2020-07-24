@@ -1,14 +1,15 @@
 package com.profico.smartmarina
 
-import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.profico.smartmarina.data.model.DataShips
 
-class ListAdapter(private val list: List<DataShips>)
+class ListAdapter(
+    private var list: List<DataShips>,
+    private val clickListener: (DataShips) -> Unit
+)
     : RecyclerView.Adapter<ShipsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShipsViewHolder {
@@ -21,22 +22,14 @@ class ListAdapter(private val list: List<DataShips>)
         holder.bind(ship)
 
         holder.itemView.setOnClickListener {
-            if (position == 0) {
-                val shipNm = list[position].toString()
-                Log.d("TAG", "$shipNm")
-            }
-
-            if (position == 1) {
-
-            }
-
-            if (position == 2) {
-
-            }
-
+            clickListener.invoke(ship)
         }
     }
 
     override fun getItemCount(): Int = list.size
 
+    fun notifyDataChange(list: List<DataShips>) {
+        this.list = list
+        notifyDataSetChanged()
+    }
 }

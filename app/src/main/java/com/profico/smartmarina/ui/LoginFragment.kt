@@ -1,5 +1,4 @@
 package com.profico.smartmarina.ui
-
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -7,21 +6,15 @@ import android.widget.TextView
 import com.profico.smartmarina.R
 import com.profico.smartmarina.data.Repository
 import org.koin.core.KoinComponent
-
 import kotlinx.android.synthetic.main.fragment_login.*
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-
-
 /**
  * Created by Pero on 21/07/2020.
  */
 class LoginFragment : BaseFragment(), KoinComponent {
-
     override fun getLayout() = R.layout.fragment_login
-
     override fun hasToolbar() = false
-
     override fun setupView() {
         setToolbarTitle("Login")
         login_button.setOnClickListener {
@@ -40,11 +33,9 @@ class LoginFragment : BaseFragment(), KoinComponent {
             }
         }
     }
-    }
-
-
-    // Retrofit call example
-    // Call method in repository -> Repository fun call retrofit
-    fun callServer() {
-        Repository().callServer("")
-    }
+}
+// Retrofit call example
+// Call method in repository -> Repository fun call retrofit
+fun callServer() {
+    Repository().callServer("")
+}

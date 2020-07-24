@@ -35,7 +35,8 @@ class AddShipFragment : BaseFragment() {
         spinner.adapter = adapter
 
         saveShip.setOnClickListener {
-            findNavController().navigate(AddShipFragmentDirections.actionAddShipFragmentToShipsFragment())
+            /**m**/ val shipName = shipName.text.toString()
+            findNavController().navigate(AddShipFragmentDirections.actionAddShipFragmentToShipsFragment(shipName))
         }
     }
 

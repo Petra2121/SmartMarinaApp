@@ -28,6 +28,10 @@ class HomeScreenFragment : BaseFragment(), KoinComponent {
             findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToShipsFragment(""))
         }
 
+        availability.setOnClickListener {
+        findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToMapFragment())
+        }
+
         pickArrivalDate()
         pickDepartureDate()
 

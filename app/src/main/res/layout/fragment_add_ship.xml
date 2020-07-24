@@ -1,14 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.AddShipFragment">
+    android:background="@color/white"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/linearAddShip"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/infoShip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="45dp"
+            android:textSize = "26sp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="@color/blue"
+            android:text="Ship Information:"/>
+
+        <EditText
+            android:id="@+id/shipName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:padding="12dp"
+            android:background="@drawable/shapecom"
+            android:textColorHint="@color/blue"
+            android:textColor="@color/black"
+            android:hint="Ship Name" />
+
+        <EditText
+            android:id="@+id/shipRegistration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="30dp"
+            android:padding="12dp"
+            android:background="@drawable/shapecom"
+            android:textColorHint="@color/blue"
+            android:textColor="@color/black"
+            android:hint="Ship Registration" />
+
+        <TextView
+            android:id="@+id/spinnerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="50dp"
+            android:textSize = "20sp"
+            android:textColor="@color/blue"
+            android:text="Select ship size:"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/ic_keyboard_arrow_down_white_24dp" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="50dp"
+            android:padding="12dp"
+            android:background="@color/blue" />
+
+
+        <Button
+            android:id="@+id/saveShip"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_rectangle"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:text="Save" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

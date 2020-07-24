@@ -2,7 +2,9 @@ package com.profico.smartmarina.ui
 
 import android.app.DatePickerDialog
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.profico.smartmarina.R
+import kotlinx.android.synthetic.main.fragment_add_ship.*
 import kotlinx.android.synthetic.main.fragment_home_screen.*
 import org.koin.core.KoinComponent
 import java.text.SimpleDateFormat
@@ -16,16 +18,22 @@ class HomeScreenFragment : BaseFragment(), KoinComponent {
 
     private val cal: Calendar = Calendar.getInstance()
 
+    val args : HomeScreenFragmentArgs by navArgs()
 
     override fun getLayout() = R.layout.fragment_home_screen
 
     override fun hasToolbar() = false
     override fun setupView() {
         ship.setOnClickListener {
-            findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToShipsFragment())
+            findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToShipsFragment(""))
         }
+
         pickArrivalDate()
         pickDepartureDate()
+
+        val x = args.shipName2
+        if(args.shipName2!="")
+            ship.text = args.shipName2
     }
 
     private val dateSetListenerArrival =
@@ -35,6 +43,7 @@ class HomeScreenFragment : BaseFragment(), KoinComponent {
             cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
             updateArrivalDateInView()
         }
+
     private val dateSetListenerDeparture =
         DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
             cal.set(Calendar.YEAR, year)

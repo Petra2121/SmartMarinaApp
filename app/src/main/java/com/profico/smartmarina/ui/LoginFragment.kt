@@ -21,7 +21,7 @@ class LoginFragment : BaseFragment(), KoinComponent {
             val username = login_username.text.toString()
             val pwd = login_password.text.toString()
             if((username=="admin") && (pwd=="admin")){
-                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeScreenFragment())
+                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeScreenFragment(""))
             }
             else if((username=="")&&(pwd=="")){
                 Toast.makeText(requireActivity(), "Please fill in username and password", Toast.LENGTH_LONG).show()

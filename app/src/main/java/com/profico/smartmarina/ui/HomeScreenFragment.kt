@@ -20,10 +20,9 @@ class HomeScreenFragment : BaseFragment() {
     override fun hasToolbar() = true
 
     override fun setupView() {
-        bbbttt.setOnClickListener {
-            findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToShipsFragment())
-        }
-
+        /*bbbttt.setOnClickListener {
+            findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToShipsFragment(""))
+        }*/
     }
 
 }

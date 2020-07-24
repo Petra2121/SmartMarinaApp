@@ -25,7 +25,7 @@ class ShipsFragment : BaseFragment() {
 
     override fun setupView() {
         btnAddNewShip.setOnClickListener {
-            findNavController().navigate(ShipsFragmentDirections.actionShipsFragmentToAddShipFragment())
+            findNavController().navigate(ShipsFragmentDirections.actionShipsFragmentToAddShipFragment(""))
         }
 
         recyclerShips.apply {
@@ -34,7 +34,9 @@ class ShipsFragment : BaseFragment() {
             layoutManager = LinearLayoutManager(activity)
             // set the custom adapter to the RecyclerView
             shipsAdapter = ListAdapter(ShipsList) {
-                findNavController().navigate(ShipsFragmentDirections.actionShipsFragmentToHomeScreenFragment())
+
+                val shipNameA = args.shipName2
+                findNavController().navigate(ShipsFragmentDirections.actionShipsFragmentToHomeScreenFragment(shipNameA))
 
             }
 

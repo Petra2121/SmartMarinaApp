@@ -22,7 +22,7 @@ class HomeScreenFragment : BaseFragment(), KoinComponent {
     override fun hasToolbar() = false
     override fun setupView() {
         ship.setOnClickListener {
-            findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToShipsFragment())
+            findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToShipsFragment(""))
         }
         pickArrivalDate()
         pickDepartureDate()

@@ -1,6 +1,7 @@
 package com.profico.smartmarina.ui
 
 import android.app.DatePickerDialog
+import android.os.Bundle
 import androidx.navigation.fragment.findNavController
 import com.profico.smartmarina.R
 import kotlinx.android.synthetic.main.fragment_home_screen.*
@@ -15,18 +16,40 @@ import java.util.*
 class HomeScreenFragment : BaseFragment(), KoinComponent {
 
     private val cal: Calendar = Calendar.getInstance()
-
+    private var someStateValue=0
+    private val SOME_VALUE_KEY ="someValueToHave"
 
     override fun getLayout() = R.layout.fragment_home_screen
 
     override fun hasToolbar() = false
     override fun setupView() {
         ship.setOnClickListener {
-            findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToShipsFragment())
+            findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToShipsFragment(""))
+
+        }
+        profile.setOnClickListener {
+            findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToProfileFragment())
+
         }
         pickArrivalDate()
         pickDepartureDate()
+
     }
+
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        if(savedInstanceState!=null){
+            someStateValue = savedInstanceState.getInt(SOME_VALUE_KEY)
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putInt(SOME_VALUE_KEY, someStateValue)
+        super.onSaveInstanceState(outState)
+
+    }
+
 
     private val dateSetListenerArrival =
         DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
@@ -68,16 +91,18 @@ class HomeScreenFragment : BaseFragment(), KoinComponent {
 
     private fun updateArrivalDateInView() {
         val myFormat = "dd/MM/yyyy"
-        val sdf = SimpleDateFormat(myFormat, Locale.ITALY)
-        dateOfArrival!!.text = sdf.format(cal.getTime())
+        val sdf = SimpleDateFormat(myFormat, Locale.ITALY).format(cal.time)
+        dateOfArrival!!.text = sdf
+
 
     }
 
     private fun updateDepartureDateInView() {
         val myFormat = "dd/MM/yyyy"
-        val sdf = SimpleDateFormat(myFormat, Locale.ITALY)
-        dateOfDeparture!!.text = sdf.format(cal.getTime())
+        val sdf = SimpleDateFormat(myFormat, Locale.ITALY).format(cal.time)
+        dateOfDeparture!!.text= sdf
 
     }
+
 
 }

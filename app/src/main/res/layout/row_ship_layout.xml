@@ -17,7 +17,6 @@
         android:id="@+id/ShipName"
         android:text="Blue Ocean"
         android:textSize="22sp"
-        android:textStyle="bold"
         android:fontFamily="@font/san_francisco"
         android:textColor="@color/white"
         android:background="@color/blue"

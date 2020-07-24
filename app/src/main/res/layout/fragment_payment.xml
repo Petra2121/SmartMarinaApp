@@ -7,21 +7,49 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/san_francisco"
+        android:text="Payment"
+        android:textAllCaps="true"
+        android:textColor="@color/blue"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/cardNumber"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/san_francisco"
         android:hint="Card number"
+        android:textSize="22sp"
         android:paddingLeft="10dp"
+        android:layout_marginTop="50dp"
         android:textColor="@color/blue"
         android:textColorHint="@color/blue"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.173" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/cardCcv"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/san_francisco"
+        android:hint="CCV"
+        android:paddingLeft="10dp"
+        android:textSize="22sp"
+        android:textColor="@color/blue"
+        android:textColorHint="@color/blue"
+        app:layout_constraintBottom_toTopOf="@+id/cardDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardNumber" />
 
     <Button
         android:id="@+id/cardDate"
@@ -29,42 +57,25 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="364dp"
-        android:background="@drawable/shapecom"
-        android:backgroundTint="#FFFFFF"
-        android:textColor="#000000"
+        android:background="@drawable/date_button"
+        android:textColor="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardCcv"
-        app:layout_constraintVertical_bias="0.111" />
-
-    <EditText
-        android:id="@+id/cardCcv"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:hint="CCV"
-        android:paddingLeft="10dp"
-        android:textColor="@color/blue"
-        android:textColorHint="@color/blue"
-        app:layout_constraintBottom_toTopOf="@+id/dateOfDeparture"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/cardCcv"/>
 
     <EditText
         android:id="@+id/cardName"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="75dp"
+        android:textSize="22sp"
         android:hint="First name"
-
+        android:fontFamily="@font/san_francisco"
         android:paddingLeft="10dp"
         android:textColor="@color/blue"
         android:textColorHint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardDate" />
 
@@ -73,16 +84,16 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="192dp"
+        android:textSize="22sp"
         android:hint="Last Name"
+        android:fontFamily="@font/san_francisco"
         android:paddingLeft="10dp"
         android:textColor="@color/blue"
         android:textColorHint="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardName"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/cardName" />
 
     <Button
         android:id="@+id/btn_pay"
@@ -91,7 +102,8 @@
         android:layout_gravity="center_horizontal"
         android:background="@drawable/button_rectangle"
         android:text="Pay"
-        android:textSize="18sp"
+        android:fontFamily="@font/san_francisco"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"

@@ -11,13 +11,26 @@
         android:id="@+id/marinaName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Marina Profico"
+        android:text="Smart Marina"
         android:textAllCaps="true"
         android:textColor="@color/blue"
-        android:textSize="26sp"
-        android:layout_marginTop="20dp"
-
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
+        android:fontFamily="@font/san_francisco"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView2"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="135dp"
+        android:src="@drawable/ic_baseline_home_24"
+        app:layout_constraintEnd_toStartOf="@+id/addressMarina"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,52 +38,91 @@
         android:id="@+id/addressMarina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="30dp"
+        android:gravity="center_horizontal"
         android:text="Address: Spinčićeva ulica 2, 21000 Split"
+        android:fontFamily="@font/san_francisco"
         android:textColor="@color/blue"
         android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/marinaName" />
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/ic_baseline_local_phone_24"
+        app:layout_constraintRight_toLeftOf="@id/phoneMarina"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView2" />
+
     <TextView
         android:id="@+id/phoneMarina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="30dp"
         android:text="Telephone number: +385 021 277 851"
-        android:textAllCaps="true"
+        android:fontFamily="@font/san_francisco"
+        android:gravity="center_horizontal"
         android:textColor="@color/blue"
         android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addressMarina" />
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView3"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/ic_baseline_access_time_24"
+        app:layout_constraintEnd_toStartOf="@+id/openMarina"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView" />
+
     <TextView
         android:id="@+id/openMarina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="30dp"
         android:text="Open: 24/7"
+        android:fontFamily="@font/san_francisco"
         android:textColor="@color/blue"
         android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phoneMarina" />
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView4"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:src="@drawable/ic_baseline_sports_tennis_24"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/activitiesMarina"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView3" />
+
     <TextView
         android:id="@+id/activitiesMarina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="@font/san_francisco"
+        android:minLines="2"
         android:text="Extra activities: diving school, restaurant, bar, hotel."
         android:textColor="@color/blue"
         android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/openMarina" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

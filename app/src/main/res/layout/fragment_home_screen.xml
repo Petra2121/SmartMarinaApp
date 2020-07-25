@@ -16,6 +16,7 @@
         android:layout_marginStart="8dp"
         android:fontFamily="@font/san_francisco"
         android:text="SELECT DATE"
+        android:textStyle="bold"
         android:textColor="#0B0000"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"

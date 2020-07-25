@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:paddingTop="40dp"
     >
 
     <androidx.recyclerview.widget.RecyclerView
@@ -21,10 +22,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_above="@+id/recyclerShips"
-        android:textColor="@color/black"
-        android:background="@color/yellow"
-        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:background="@color/blue"
+        android:textSize="22sp"
         android:padding="15dp"
+        android:fontFamily="@font/san_francisco"
 
         android:text="Add New Ship"
         />

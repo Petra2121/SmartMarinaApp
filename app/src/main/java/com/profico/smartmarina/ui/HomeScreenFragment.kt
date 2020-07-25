@@ -23,6 +23,7 @@ class HomeScreenFragment : BaseFragment(), KoinComponent {
     override fun getLayout() = R.layout.fragment_home_screen
 
     override fun hasToolbar() = false
+
     override fun setupView() {
         ship.setOnClickListener {
             findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToShipsFragment(""))
@@ -31,6 +32,10 @@ class HomeScreenFragment : BaseFragment(), KoinComponent {
         availability.setOnClickListener {
         findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToMapFragment())
         }
+        profile.setOnClickListener {
+            findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToProfileFragment())
+        }
+
         profile.setOnClickListener {
             findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToProfileFragment())
         }

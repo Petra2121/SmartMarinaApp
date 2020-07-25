@@ -5,11 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="5dp"
-    app:cardElevation="6dp"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="8dp"
     app:cardUseCompatPadding="true"
     android:background="@color/blue"
-    android:backgroundTint="@color/blue"
     android:layout_gravity="center_horizontal">
 
     <TextView
@@ -18,7 +17,7 @@
         android:id="@+id/ShipName"
         android:text="Blue Ocean"
         android:textSize="22sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/san_francisco"
         android:textColor="@color/white"
         android:background="@color/blue"
         android:paddingBottom="10sp"

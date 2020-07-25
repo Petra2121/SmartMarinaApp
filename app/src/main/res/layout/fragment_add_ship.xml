@@ -1,94 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     >
 
-    <LinearLayout
-        android:id="@+id/linearAddShip"
+    <TextView
+        android:id="@+id/infoShip"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:text="Ship Information:"
+        android:fontFamily="@font/san_francisco"
+        android:textAllCaps="true"
+        android:textColor="@color/blue"
+        android:textSize="33sp"
+        android:textStyle="bold"
+        android:layout_marginTop="70dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/infoShip"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="45dp"
-            android:textSize = "26sp"
-            android:textAllCaps="true"
-            android:textStyle="bold"
-            android:textColor="@color/blue"
-            android:text="Ship Information:"/>
-
-        <EditText
-            android:id="@+id/shipName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="140dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:padding="12dp"
-            android:background="@drawable/shapecom"
-            android:textColorHint="@color/blue"
-            android:textColor="@color/black"
-            android:hint="Ship Name" />
-
-        <EditText
-            android:id="@+id/shipRegistration"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="30dp"
-            android:padding="12dp"
-            android:background="@drawable/shapecom"
-            android:textColorHint="@color/blue"
-            android:textColor="@color/black"
-            android:hint="Ship Registration" />
-
-        <TextView
-            android:id="@+id/spinnerName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="50dp"
-            android:textSize = "20sp"
-            android:textColor="@color/blue"
-            android:text="Select ship size:"/>
-
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="50dp"
-            android:padding="12dp"
-            android:background="@color/blue" />
+    <EditText
+        android:id="@+id/shipName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/shapecom"
+        android:fontFamily="@font/san_francisco"
+        android:hint="Ship Name"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/infoShip" />
 
 
-        <Button
-            android:id="@+id/saveShip"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_rectangle"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="50dp"
-            android:textSize="18sp"
-            android:textColor="@color/black"
-            android:text="Save" />
+    <EditText
+        android:id="@+id/shipRegistration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/shapecom"
+        android:fontFamily="@font/san_francisco"
+        android:hint="Ship Registration"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="20dp"
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/blue"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shipName"
+        app:layout_constraintVertical_bias="0.0" />
 
-    </LinearLayout>
+    <TextView
+        android:id="@+id/spinnerName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Select ship size:"
+        android:textAllCaps="true"
+        android:textColor="@color/blue"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/san_francisco"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="168dp"
+        android:background="@color/blue"
+        android:fontFamily="@font/san_francisco"
+        android:padding="12dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/saveShip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/saveShip"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="92dp"
+        android:background="@drawable/button_rectangle"
+        android:fontFamily="@font/san_francisco"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

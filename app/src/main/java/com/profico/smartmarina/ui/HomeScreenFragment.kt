@@ -31,6 +31,9 @@ class HomeScreenFragment : BaseFragment(), KoinComponent {
         availability.setOnClickListener {
         findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToMapFragment())
         }
+        profile.setOnClickListener {
+            findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToProfileFragment())
+        }
 
         pickArrivalDate()
         pickDepartureDate()

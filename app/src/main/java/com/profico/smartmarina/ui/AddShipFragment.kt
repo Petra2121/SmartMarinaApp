@@ -1,11 +1,10 @@
 package com.profico.smartmarina.ui
 
-import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.profico.smartmarina.R
 import com.profico.smartmarina.data.Repository
@@ -25,7 +24,7 @@ class AddShipFragment : BaseFragment() {
         val values = arrayOf(
             "Small",
             "Medium",
-            "Large"
+            "Big"
         )
         val adapter = ArrayAdapter(
             this.requireActivity(),
@@ -35,16 +34,25 @@ class AddShipFragment : BaseFragment() {
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
         spinner.adapter = adapter
 
-        saveShip.setOnClickListener {
-            val shipNameA = shipName.text.toString()
-            findNavController().navigate(AddShipFragmentDirections.actionAddShipFragmentToShipsFragment(shipNameA))
+        spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+                    /**/
+                }
+                override fun onItemSelected( parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                    if (parent != null) {
+                        val selectedSize = parent.getItemAtPosition(position).toString(); //spremljena velicina
+                        Toast.makeText(parent.context, selectedSize, Toast.LENGTH_SHORT).show()
+
+                        saveShip.setOnClickListener {
+                            val shipNameA = shipName.text.toString()
+                            val regnumb = shipRegistration.text.toString()
+                            findNavController().navigate(AddShipFragmentDirections.actionAddShipFragmentToShipsFragment(shipNameA))
+                            /*proba*/
+                            callAddServer(shipNameA, regnumb, selectedSize, "5d7a514b5d2c12c7449be040")
+                        }
+                    };
+                }
         }
-
-
-
-
-        /*Proba pisanja podataka u bazu*/
-        val probaImena = shipName.text.toString()
 
     }
 
@@ -52,6 +60,6 @@ class AddShipFragment : BaseFragment() {
 
 // Retrofit call example
 // Call method in repository -> Repository fun call retrofit
-fun callAddServer() {
-    Repository().callAddServer("")
+fun callAddServer(boatname: String, regnumber: String, boattype: String, userboat: String) {
+    Repository().callAddServer(boatname, regnumber, boattype, userboat)
 }

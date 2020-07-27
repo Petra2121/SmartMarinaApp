@@ -14,6 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/san_francisco"
+        android:textStyle="bold"
         android:text="My Profile"
         android:textStyle="bold"
         android:textAllCaps="true"

@@ -1,10 +1,12 @@
 package com.profico.smartmarina.ui
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.navigation.fragment.findNavController
 import com.profico.smartmarina.R
@@ -26,6 +28,7 @@ class AddShipFragment : BaseFragment() {
             "Medium",
             "Large"
         )
+
         val adapter = ArrayAdapter(
             this.requireActivity(),
             android.R.layout.simple_spinner_item,
@@ -34,9 +37,34 @@ class AddShipFragment : BaseFragment() {
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
         spinner.adapter = adapter
 
+        /*** ovo san minjala ***/
+
+        spinner.onItemSelectedListener = object:
+
+            AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                /**/
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                if (parent != null) {
+                    var selectedSize = parent.getItemAtPosition(position).toString(); //spremljena velicina
+                    Toast.makeText(parent.getContext(), selectedSize,Toast.LENGTH_SHORT).show()
+
+                };
+            }
+
+        }
+        /*** do ovoga ***/
         saveShip.setOnClickListener {
             val shipNameA = shipName.text.toString()
             findNavController().navigate(AddShipFragmentDirections.actionAddShipFragmentToShipsFragment(shipNameA))
         }
+
     }
 }

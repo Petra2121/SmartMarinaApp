@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.profico.smartmarina.ListAdapter
 import com.profico.smartmarina.R
 import com.profico.smartmarina.data.model.DataShips
+import kotlinx.android.synthetic.main.fragment_home_screen.view.*
 import kotlinx.android.synthetic.main.fragment_ships.*
 
 /**
@@ -37,7 +38,6 @@ class ShipsFragment : BaseFragment() {
 
                 val shipNameA = args.shipName2
                 findNavController().navigate(ShipsFragmentDirections.actionShipsFragmentToHomeScreenFragment(shipNameA))
-
             }
 
             adapter = shipsAdapter

@@ -83,13 +83,14 @@
         android:text="+385 021 277 851"
         android:textColor="@color/blue"
         android:textSize="22sp"
-        app:layout_constraintTop_toBottomOf="@+id/phoneMarina"
-        tools:layout_editor_absoluteX="64dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneMarina" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/appCompatImageView3"
-        android:layout_width="27dp"
-        android:layout_height="27dp"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="52dp"
         android:src="@drawable/ic_baseline_access_time_24"
@@ -114,9 +115,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/appCompatImageView4"
-        android:layout_width="27dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="20dp"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
         android:layout_marginTop="52dp"
         android:src="@drawable/ic_baseline_sports_tennis_24"
         app:layout_constraintEnd_toStartOf="@+id/activitiesMarina"
@@ -126,11 +126,11 @@
 
     <TextView
         android:id="@+id/activitiesMarina"
-        android:layout_width="300dp"
+        android:layout_width="293dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="64dp"
         android:layout_marginTop="36dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="64dp"
         android:fontFamily="@font/san_francisco"
         android:minLines="2"
         android:text="Extra activities: diving school, restaurant, bar, hotel."
@@ -138,7 +138,7 @@
         android:textColor="@color/blue"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/openMarina" />
 

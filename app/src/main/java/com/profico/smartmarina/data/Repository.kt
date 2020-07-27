@@ -1,5 +1,7 @@
 package com.profico.smartmarina.data
 
+import com.profico.smartmarina.data.model.AddShipsRequest
+import com.profico.smartmarina.data.model.AddShipsResponse
 import com.profico.smartmarina.data.model.LoginRequest
 import com.profico.smartmarina.data.model.LoginResponse
 import com.profico.smartmarina.data.remote.ApiService
@@ -30,6 +32,26 @@ class Repository : KoinComponent {
                 }
             }
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+
+            }
+        })
+
+        return returnValue
+    }
+
+    fun callAddServer(nameboat: String): AddShipsResponse? {
+
+        var returnValue : AddShipsResponse? = null
+
+        val request = AddShipsRequest(boatName = nameboat)
+
+        apiService.call(request).enqueue(object : Callback<AddShipsResponse> {
+            override fun onResponse(call: Call<AddShipsResponse>, response: Response<AddShipsResponse>) {
+                if (response.isSuccessful) {
+                    returnValue = response.body()
+                }
+            }
+            override fun onFailure(call: Call<AddShipsResponse>, t: Throwable) {
 
             }
         })

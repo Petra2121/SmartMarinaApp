@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/san_francisco"
         android:text="My Profile"
+        android:textStyle="bold"
         android:textAllCaps="true"
         android:textColor="@color/blue"
         android:layout_marginTop="60dp"

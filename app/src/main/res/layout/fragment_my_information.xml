@@ -17,6 +17,7 @@
         android:fontFamily="@font/san_francisco"
         android:text="User Information"
         android:textAllCaps="true"
+        android:textStyle="bold"
         android:textColor="@color/blue"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"

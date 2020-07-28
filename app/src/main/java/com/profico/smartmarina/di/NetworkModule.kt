@@ -33,7 +33,7 @@ val retrofitModule = module {
     fun provideRetrofitClient(okHttpClient: OkHttpClient, moshiBuilder: Moshi): Retrofit =
 
         Retrofit.Builder()
-            .baseUrl("BaseEndpoint")
+            .baseUrl("https://api.smart-marina.proficodev.com/")
             .client(okHttpClient)
             .addConverterFactory(MoshiConverterFactory.create(moshiBuilder))
             .build()

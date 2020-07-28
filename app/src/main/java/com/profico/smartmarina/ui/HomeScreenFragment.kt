@@ -1,6 +1,7 @@
 package com.profico.smartmarina.ui
 
 import android.app.DatePickerDialog
+import android.util.JsonReader
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.profico.smartmarina.R
@@ -100,5 +101,6 @@ class HomeScreenFragment : BaseFragment(), KoinComponent {
         dateOfDeparture!!.text = sdf.format(cal.getTime())
 
     }
+
 
 }

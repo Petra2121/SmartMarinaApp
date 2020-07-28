@@ -1,7 +1,6 @@
 package com.profico.smartmarina.data
 
-import com.profico.smartmarina.data.model.LoginRequest
-import com.profico.smartmarina.data.model.LoginResponse
+import com.profico.smartmarina.data.model.*
 import com.profico.smartmarina.data.remote.ApiService
 import org.koin.core.KoinComponent
 import org.koin.core.inject
@@ -36,4 +35,28 @@ class Repository : KoinComponent {
 
         return returnValue
     }
+
+    fun getShipName ( shipname: String, function: (List<Boats>) -> Unit): ShipsResponse? {
+       // shipid: String, , shipregistration: String, shiptype: String,
+        var returnValue : ShipsResponse? = null
+
+        val request = ShipsRequest(shipName = shipname)
+       // shipId = shipid,, shipRegistration = shipregistration, shipType = shiptype
+        apiService.call2().enqueue(object : Callback<ShipsResponse> {
+            override fun onResponse(call: Call<ShipsResponse>, response: Response<ShipsResponse>) {
+                if (response.isSuccessful) {
+                    returnValue = response.body()
+                    println(returnValue)
+                    returnValue?.data?.let { function.invoke(it) }
+                }
+            }
+            override fun onFailure(call: Call<ShipsResponse>, t: Throwable) {
+
+            }
+        })
+
+        return returnValue
+    }
+
+
 }

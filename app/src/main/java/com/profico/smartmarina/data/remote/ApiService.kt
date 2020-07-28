@@ -1,9 +1,9 @@
 package com.profico.smartmarina.data.remote
 
-import com.profico.smartmarina.data.model.LoginRequest
-import com.profico.smartmarina.data.model.LoginResponse
+import com.profico.smartmarina.data.model.*
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 /**
@@ -13,11 +13,14 @@ import retrofit2.http.POST
 interface ApiService {
 
     companion object {
-        const val ENDPOINT = "endpoint"
+        const val ENDPOINT = "boats"
     }
 
     @POST(ENDPOINT)
     fun call(
         @Body loginRequest: LoginRequest
     ): Call<LoginResponse>
+
+    @GET(ENDPOINT)
+    fun call2(): Call<ShipsResponse>
 }

@@ -7,7 +7,9 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.profico.smartmarina.ListAdapter
 import com.profico.smartmarina.R
-import com.profico.smartmarina.data.model.DataShips
+import com.profico.smartmarina.data.Repository
+import com.profico.smartmarina.data.model.Boats
+import kotlinx.android.synthetic.main.fragment_add_ship.*
 import kotlinx.android.synthetic.main.fragment_ships.*
 
 /**
@@ -15,9 +17,9 @@ import kotlinx.android.synthetic.main.fragment_ships.*
  */
 class ShipsFragment : BaseFragment() {
 
-    val args : ShipsFragmentArgs by navArgs()
+    val args: ShipsFragmentArgs by navArgs()
 
-    var shipsAdapter : ListAdapter? = null
+    var shipsAdapter: ListAdapter? = null
 
     override fun getLayout(): Int = R.layout.fragment_ships
 
@@ -25,15 +27,17 @@ class ShipsFragment : BaseFragment() {
 
     override fun setupView() {
         btnAddNewShip.setOnClickListener {
-            findNavController().navigate(ShipsFragmentDirections.actionShipsFragmentToAddShipFragment(""))
+            findNavController().navigate(
+                ShipsFragmentDirections.actionShipsFragmentToAddShipFragment("")
+            )
         }
 
         recyclerShips.apply {
             // set a LinearLayoutManager to handle Android
             // RecyclerView behavior
             layoutManager = LinearLayoutManager(activity)
-            // set the custom adapter to the RecyclerView
-            shipsAdapter = ListAdapter(ShipsList) {
+             //set the custom adapter to the RecyclerView
+            shipsAdapter = ListAdapter{
 
                 val shipNameA = args.shipName2
                 findNavController().navigate(ShipsFragmentDirections.actionShipsFragmentToHomeScreenFragment(shipNameA))
@@ -43,17 +47,19 @@ class ShipsFragment : BaseFragment() {
             adapter = shipsAdapter
         }
 
-        if (args.shipName2 != "") {
-            ShipsList.add(DataShips(args.shipName2))
-            shipsAdapter?.notifyDataChange(ShipsList)
-        }
+        //if (args.shipName2 != "") {
+            //.add(DataShips(args.shipName2))
+
+
+
+       getShipName()
     }
 
-    private val ShipsList = mutableListOf(
-        DataShips("National Treasure"),
-        DataShips("Thunder"),
-        DataShips("Blue Ocean")
-    )
+//    private val ShipsList = mutableListOf(
+//        DataShips("National Treasure"),
+//        DataShips("Thunder"),
+//        DataShips("Blue Ocean")
+//    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,5 +69,36 @@ class ShipsFragment : BaseFragment() {
     companion object {
         fun newInstance(): ShipsFragment = ShipsFragment()
     }
-
+    fun getShipName() {
+        Repository().getShipName("") {
+            shipsAdapter?.notifyDataChange(it)
+        }
+    }
 }
+
+//     fun fetchJson(){
+//        val url ="https://api.smart-marina.proficodev.com/boats"
+//        val request = Request.Builder().url(url).build()
+//        val client = OkHttpClient()
+//
+//        client.newCall(request).enqueue(object: Callback{
+//            override fun onResponse(call: Call, response: Response) {
+//                val body = response?.body()?.string()
+//                println(body)
+//                val gson = GsonBuilder().create()
+//                val brodovi = gson.fromJson(body, Brodovi ::class.java)
+//
+//
+//             //   recyclerShips.adapter = ListAdapter (brodovi)
+//
+//            }
+//            override fun onFailure(call: Call, e: IOException) {
+//                println("Failed to execute request")
+//            }
+//        })
+//
+//    }
+//
+//}
+//class Brodovi (val data: List<Ime>)
+//class Ime (val id: Int, val name: String, val registration_number: String, val type: String)

@@ -16,7 +16,7 @@
         android:textColor="@color/blue"
         android:textSize="33sp"
         android:textStyle="bold"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="60dp"
         android:gravity="center_horizontal"
         android:fontFamily="@font/san_francisco"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,50 +27,50 @@
         android:id="@+id/appCompatImageView2"
         android:layout_width="28dp"
         android:layout_height="28dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="208dp"
+        android:layout_marginTop="68dp"
         android:src="@drawable/ic_baseline_home_24"
-        app:layout_constraintEnd_toStartOf="@+id/addressMarina"
-        app:layout_constraintHorizontal_bias="0.933"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/marinaName" />
 
     <TextView
         android:id="@+id/addressMarina"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="120dp"
         android:fontFamily="@font/san_francisco"
         android:gravity="center_horizontal"
         android:text="Address: Spinčićeva ulica 2, 21000 Split"
         android:textColor="@color/blue"
         android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/marinaName" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/appCompatImageView"
-        android:layout_width="27dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="72dp"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
         android:src="@drawable/ic_baseline_local_phone_24"
-        app:layout_constraintRight_toLeftOf="@id/phoneMarina"
+        app:layout_constraintBottom_toTopOf="@+id/phoneMarina"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/addressMarina" />
 
     <TextView
         android:id="@+id/phoneMarina"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="76dp"
         android:fontFamily="@font/san_francisco"
         android:gravity="center_horizontal"
         android:text="Telephone number:"
         android:textColor="@color/blue"
         android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addressMarina" />
 
@@ -83,54 +83,50 @@
         android:text="+385 021 277 851"
         android:textColor="@color/blue"
         android:textSize="22sp"
-        app:layout_constraintTop_toBottomOf="@+id/phoneMarina"
-        tools:layout_editor_absoluteX="64dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneMarina" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/appCompatImageView3"
-        android:layout_width="27dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
         android:src="@drawable/ic_baseline_access_time_24"
-        app:layout_constraintEnd_toStartOf="@+id/openMarina"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintBottom_toTopOf="@+id/openMarina"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumMarina" />
 
     <TextView
         android:id="@+id/openMarina"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="80dp"
         android:fontFamily="@font/san_francisco"
         android:text="Open: 24/7"
         android:textAlignment="center"
         android:textColor="@color/blue"
         android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phoneNumMarina" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/appCompatImageView4"
-        android:layout_width="27dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="32dp"
+        android:layout_height="25dp"
         android:src="@drawable/ic_baseline_sports_tennis_24"
-        app:layout_constraintEnd_toStartOf="@+id/activitiesMarina"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintBottom_toTopOf="@+id/activitiesMarina"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/openMarina" />
 
     <TextView
         android:id="@+id/activitiesMarina"
-        android:layout_width="300dp"
+        android:layout_width="293dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginTop="68dp"
         android:fontFamily="@font/san_francisco"
         android:minLines="2"
         android:text="Extra activities: diving school, restaurant, bar, hotel."
@@ -138,7 +134,7 @@
         android:textColor="@color/blue"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/openMarina" />
 

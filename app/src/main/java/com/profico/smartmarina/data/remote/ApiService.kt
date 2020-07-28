@@ -1,6 +1,9 @@
 package com.profico.smartmarina.data.remote
 
-import com.profico.smartmarina.data.model.*
+import com.profico.smartmarina.data.model.AddShipsRequest
+import com.profico.smartmarina.data.model.AddShipsResponse
+import com.profico.smartmarina.data.model.LoginRequest
+import com.profico.smartmarina.data.model.LoginResponse
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -23,4 +26,9 @@ interface ApiService {
 
     @GET(ENDPOINT)
     fun call2(): Call<ShipsResponse>
+
+    @POST(ENDPOINT)
+    fun callAdd(
+        @Body addShipsRequest: AddShipsRequest
+    ): Call<AddShipsResponse>
 }

@@ -19,34 +19,21 @@ class HomeScreenFragment : BaseFragment(), KoinComponent {
 
     private val cal: Calendar = Calendar.getInstance()
 
-    val args : HomeScreenFragmentArgs by navArgs()
-
     override fun getLayout() = R.layout.fragment_home_screen
 
     override fun hasToolbar() = false
 
     override fun setupView() {
-        ship.setOnClickListener {
-            findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToShipsFragment(""))
-        }
-
-        availability.setOnClickListener {
-        findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToMapFragment())
-        }
-        profile.setOnClickListener {
-            findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToProfileFragment())
-        }
-
-        profile.setOnClickListener {
-            findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToProfileFragment())
-        }
-
         pickArrivalDate()
         pickDepartureDate()
 
-        val x = args.shipName2
-        if(args.shipName2!="")
-            ship.text = args.shipName2
+        profile.setOnClickListener {
+            findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToProfileFragment())
+        }
+
+        ship.setOnClickListener {
+            findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToShipsFragment("", dateOfArrival.text.toString(), dateOfDeparture.text.toString(), ""))
+        }
     }
 
     private val dateSetListenerArrival =
@@ -65,7 +52,7 @@ class HomeScreenFragment : BaseFragment(), KoinComponent {
             updateDepartureDateInView()
         }
 
-    private fun pickArrivalDate() {
+    private fun pickArrivalDate() { //otvara se izbornik (kalendar)
         dateOfArrival.setOnClickListener {
             DatePickerDialog(
                 requireContext(), dateSetListenerArrival, cal.get(Calendar.YEAR),
@@ -73,9 +60,7 @@ class HomeScreenFragment : BaseFragment(), KoinComponent {
                 cal.get(Calendar.DAY_OF_MONTH)
             ).show()
         }
-
     }
-
 
     private fun pickDepartureDate() {
         dateOfDeparture.setOnClickListener {
@@ -88,19 +73,16 @@ class HomeScreenFragment : BaseFragment(), KoinComponent {
 
     }
 
-    private fun updateArrivalDateInView() {
+    private fun updateArrivalDateInView(){ //da bi se datum prikaza u button
         val myFormat = "dd/MM/yyyy"
         val sdf = SimpleDateFormat(myFormat, Locale.ITALY)
         dateOfArrival!!.text = sdf.format(cal.getTime())
-
     }
 
     private fun updateDepartureDateInView() {
         val myFormat = "dd/MM/yyyy"
         val sdf = SimpleDateFormat(myFormat, Locale.ITALY)
         dateOfDeparture!!.text = sdf.format(cal.getTime())
-
     }
-
 
 }

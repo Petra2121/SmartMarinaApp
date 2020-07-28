@@ -37,7 +37,7 @@ class NewScreenFragment : BaseFragment(), KoinComponent {
             findNavController().navigate(NewScreenFragmentDirections.actionNewScreenFragmentToProfileFragment())
         }
 
-        //val x = args.shipName2
+        //args.shipSize je odabrana velicina broda
         if(args.shipName2!="")
             shippp.text = args.shipName2
 

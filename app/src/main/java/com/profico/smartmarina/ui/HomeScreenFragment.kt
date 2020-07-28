@@ -31,7 +31,7 @@ class HomeScreenFragment : BaseFragment(), KoinComponent {
         }
 
         ship.setOnClickListener {
-            findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToShipsFragment("", dateOfArrival.text.toString(), dateOfDeparture.text.toString()))
+            findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToShipsFragment("", dateOfArrival.text.toString(), dateOfDeparture.text.toString(), ""))
         }
     }
 

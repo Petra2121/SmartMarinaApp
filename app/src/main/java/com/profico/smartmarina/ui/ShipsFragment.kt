@@ -26,7 +26,9 @@ class ShipsFragment : BaseFragment() {
 
     override fun setupView() {
         btnAddNewShip.setOnClickListener {
-            findNavController().navigate(ShipsFragmentDirections.actionShipsFragmentToAddShipFragment("", args.arrivalDate, args.departureDate))
+            findNavController().navigate(ShipsFragmentDirections.actionShipsFragmentToAddShipFragment("", args.arrivalDate, args.departureDate,
+                args.shipSize.toString()
+            ))
         }
 
         recyclerShips.apply {
@@ -37,7 +39,7 @@ class ShipsFragment : BaseFragment() {
             shipsAdapter = ListAdapter(ShipsList) {
 
                 findNavController().navigate(ShipsFragmentDirections.actionShipsFragmentToNewScreenFragment(it.shipName,
-                    args.arrivalDate, args.departureDate))
+                    args.arrivalDate, args.departureDate, args.shipSize.toString()))
             }
 
             adapter = shipsAdapter

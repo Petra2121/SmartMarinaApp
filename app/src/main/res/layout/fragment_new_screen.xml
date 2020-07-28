@@ -2,12 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/homeScreen"
+    android:id="@+id/newScreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:visibility="visible"
-    tools:context=".ui.HomeScreenFragment">
+    tools:context=".ui.NewScreenFragment">
 
     <TextView
         android:id="@+id/chooseDate"
@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/san_francisco"
-        android:text="SELECT DATE"
+        android:text="NEW SCREEN - PROMINIT"
         android:textStyle="bold"
         android:textColor="#0B0000"
         android:textSize="36sp"
@@ -26,14 +26,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.115" />
 
-    <Button
-        android:id="@+id/dateOfArrival"
+    <TextView
+        android:id="@+id/dateA"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="91dp"
         android:background="@drawable/date_button"
-        android:textColor="#000000"
+        android:gravity="center"
+        android:fontFamily="@font/san_francisco"
+        android:text="prvi datum"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.855"
@@ -41,18 +46,23 @@
         app:layout_constraintTop_toBottomOf="@+id/chooseDate"
         app:layout_constraintVertical_bias="0.019" />
 
-    <Button
-        android:id="@+id/dateOfDeparture"
+    <TextView
+        android:id="@+id/dateD"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:background="@drawable/date_button"
-        android:textColor="#000000"
+        android:fontFamily="@font/san_francisco"
+        android:gravity="center"
+        android:text="drugi datum"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.855"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateOfArrival"
+        app:layout_constraintTop_toBottomOf="@+id/dateA"
         app:layout_constraintVertical_bias="0.113" />
 
     <TextView
@@ -86,18 +96,22 @@
         app:layout_constraintVertical_bias="0.139" />
 
     <Button
-        android:id="@+id/ship"
-        android:layout_width="155dp"
-        android:layout_height="55dp"
-        android:layout_marginBottom="256dp"
+        android:id="@+id/availability"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/button_rectangle"
         android:fontFamily="@font/san_francisco"
-        android:text="SHIP"
-        android:textSize="22sp"
+        android:text="AVAILABILITY"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ship"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
         android:id="@+id/profile"
@@ -114,5 +128,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/shippp"
+        android:layout_width="155dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="252dp"
+        android:background="@drawable/button_rectangle"
+        android:gravity="center"
+        android:fontFamily="@font/san_francisco"
+        android:text="ship"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

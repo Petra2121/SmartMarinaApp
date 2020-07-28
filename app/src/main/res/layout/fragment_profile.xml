@@ -26,9 +26,10 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/myInfoProf"
-        android:layout_width="380dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
+        android:padding="15dp"
         android:text="My Information"
         android:textSize="22sp"
         android:background="@drawable/shapecom"
@@ -41,9 +42,10 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/myReservProf"
-        android:layout_width="380dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="35dp"
+        android:padding="15dp"
         android:text="My Reservations"
         android:textSize="22sp"
         android:background="@drawable/shapecom"
@@ -56,9 +58,10 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/marinaInfoProf"
-        android:layout_width="380dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="35dp"
+        android:padding="15dp"
         android:text="Marina Information"
         android:textSize="22sp"
         android:background="@drawable/shapecom"

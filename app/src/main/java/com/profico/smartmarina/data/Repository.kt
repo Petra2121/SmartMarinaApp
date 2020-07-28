@@ -39,16 +39,17 @@ class Repository : KoinComponent {
         return returnValue
     }
 
-    fun callAddServer(nameboat: String): AddShipsResponse? {
+    fun callAddServer(boatname: String, regnumber: String, boattype: String, userboat: String): AddShipsResponse? {
 
         var returnValue : AddShipsResponse? = null
 
-        val request = AddShipsRequest(boatName = nameboat)
+        val request = AddShipsRequest(boatName = boatname, regNumber = regnumber, boatType = boattype, userBoat = userboat)
 
-        apiService.call(request).enqueue(object : Callback<AddShipsResponse> {
+        apiService.callAdd(request).enqueue(object : Callback<AddShipsResponse> {
             override fun onResponse(call: Call<AddShipsResponse>, response: Response<AddShipsResponse>) {
                 if (response.isSuccessful) {
                     returnValue = response.body()
+                    println(returnValue)
                 }
             }
             override fun onFailure(call: Call<AddShipsResponse>, t: Throwable) {

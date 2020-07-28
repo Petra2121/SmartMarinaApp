@@ -13,13 +13,13 @@
         android:id="@+id/userInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="@font/san_francisco"
-        android:textStyle="bold"
         android:text="User Information"
         android:textAllCaps="true"
         android:textColor="@color/blue"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,12 +29,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/san_francisco"
-        android:text="Name"
+        android:text="Name:"
+        android:textStyle="bold"
         android:textColor="@color/blue"
         android:textSize="22sp"
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="30dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userInfo" />
+
+    <TextView
+        android:id="@+id/nameInfo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/san_francisco"
+        android:text="Stipe"
+        android:textColor="@color/blue"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.588"
+        app:layout_constraintStart_toStartOf="@id/nameInfo"
         app:layout_constraintTop_toBottomOf="@+id/userInfo" />
 
     <TextView
@@ -42,37 +58,71 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/san_francisco"
-        android:text="Surname"
+        android:text="Surname:"
+        android:textStyle="bold"
         android:textColor="@color/blue"
         android:textSize="22sp"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameInfo" />
+
+
+    <TextView
+        android:id="@+id/surnameInfo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/san_francisco"
+        android:text="Stipic"
+        android:textColor="@color/blue"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.594"
+        app:layout_constraintStart_toStartOf="@id/surnameInfo"
+        app:layout_constraintTop_toBottomOf="@+id/nameInfo2" />
 
     <TextView
         android:id="@+id/usernameInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/san_francisco"
-        android:text="Username"
+        android:text="Username:"
         android:textColor="@color/blue"
+        android:textStyle="bold"
         android:textSize="22sp"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/surnameInfo" />
+
+    <TextView
+        android:id="@+id/usernameInfo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/san_francisco"
+        android:text="stipe_87"
+        android:textColor="@color/blue"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.649"
+        app:layout_constraintStart_toStartOf="@id/usernameInfo"
+        app:layout_constraintTop_toBottomOf="@+id/surnameInfo2" />
 
     <TextView
         android:id="@+id/passw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/san_francisco"
-        android:text="Password"
+        android:text="Password:"
+        android:textStyle="bold"
         android:textColor="@color/blue"
         android:textSize="22sp"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usernameInfo" />
 
@@ -80,26 +130,28 @@
         android:id="@+id/passwInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/san_francisco"
         android:inputType="textPassword"
         android:text="Password"
         android:textColor="@color/blue"
         android:textSize="22sp"
-        app:layout_constraintLeft_toRightOf="@+id/passw"
-        app:layout_constraintTop_toBottomOf="@+id/userInfo" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintStart_toEndOf="@+id/passw"
+        app:layout_constraintTop_toBottomOf="@+id/usernameInfo2" />
 
     <TextView
         android:id="@+id/changePassw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/san_francisco"
-        android:text="Change password"
+        android:text="Change password:"
+        android:textStyle="bold"
         android:textColor="@color/blue"
         android:textSize="22sp"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passw" />
 
@@ -107,14 +159,14 @@
         android:id="@+id/newPassw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="256dp"
         android:fontFamily="@font/san_francisco"
         android:inputType="textPassword"
         android:text="Password"
         android:textColor="@color/blue"
         android:textSize="22sp"
-        app:layout_constraintLeft_toRightOf="@+id/changePassw"
-        app:layout_constraintTop_toBottomOf="@+id/userInfo" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.367"
+        app:layout_constraintStart_toEndOf="@+id/changePassw"
+        app:layout_constraintTop_toBottomOf="@+id/passwInfo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

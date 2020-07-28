@@ -10,28 +10,189 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/success"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         android:fontFamily="@font/san_francisco"
-        android:textStyle="bold"
         android:text="Success"
+        android:textAllCaps="true"
         android:textColor="@color/blue"
-        android:layout_marginTop="50dp"
-        android:textSize="30dp"
+        android:textSize="35sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ImageButton
         android:id="@+id/goToProfile"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:background="@color/white"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         android:clickable="true"
         android:src="@drawable/profile_icon_foreground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/reservationNum"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/san_francisco"
+        android:text="Reservation number:"
+        android:textStyle="bold"
+        android:textColor="@color/blue"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/success" />
+
+    <TextView
+        android:id="@+id/reservationNum2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/san_francisco"
+        android:gravity="center_horizontal"
+        android:text="584261"
+        android:textColor="@color/blue"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/reservationNum"
+        app:layout_constraintTop_toBottomOf="@+id/success" />
+
+    <TextView
+        android:id="@+id/boatReg"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/san_francisco"
+        android:text="Boat registration:"
+        android:textStyle="bold"
+        android:textColor="@color/blue"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reservationNum" />
+
+    <TextView
+        android:id="@+id/boatReg2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/san_francisco"
+        android:gravity="center_horizontal"
+        android:text="5ABC61"
+        android:textColor="@color/blue"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/boatReg"
+        app:layout_constraintTop_toBottomOf="@+id/reservationNum2" />
+
+    <TextView
+        android:id="@+id/dockID"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/san_francisco"
+        android:text="Dock:"
+        android:textStyle="bold"
+        android:textColor="@color/blue"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boatReg" />
+
+    <TextView
+        android:id="@+id/dockID2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/san_francisco"
+        android:gravity="center_horizontal"
+        android:text="100"
+        android:textColor="@color/blue"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dockID"
+        app:layout_constraintTop_toBottomOf="@+id/boatReg2" />
+
+    <TextView
+        android:id="@+id/dateSuc"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/san_francisco"
+        android:text="Date of arrival:"
+        android:textStyle="bold"
+        android:textColor="@color/blue"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dockID" />
+
+    <TextView
+        android:id="@+id/dateSuc2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/san_francisco"
+        android:gravity="center_horizontal"
+        android:text="10.05.2020."
+        android:textColor="@color/blue"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dateSuc"
+        app:layout_constraintTop_toBottomOf="@+id/dockID2" />
+
+    <TextView
+        android:id="@+id/priceSuc"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/san_francisco"
+        android:text="Price:"
+        android:textStyle="bold"
+        android:textColor="@color/blue"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateSuc" />
+
+    <TextView
+        android:id="@+id/priceSuc2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/san_francisco"
+        android:gravity="center_horizontal"
+        android:text="100$"
+        android:textColor="@color/blue"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/priceSuc"
+        app:layout_constraintTop_toBottomOf="@+id/dateSuc2" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageSuc"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/successimage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceSuc"
+        app:layout_constraintVertical_bias="0.374" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

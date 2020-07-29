@@ -40,6 +40,8 @@ class HomeScreenFragment : BaseFragment(), KoinComponent {
         pickArrivalDate()
         pickDepartureDate()
 
+        val datearr = dateOfArrival.text.toString()
+
         val x = args.shipName2
         if(args.shipName2!="")
             ship.text = args.shipName2

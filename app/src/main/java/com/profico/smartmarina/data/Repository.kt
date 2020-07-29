@@ -1,9 +1,6 @@
 package com.profico.smartmarina.data
 
-import com.profico.smartmarina.data.model.AddShipsRequest
-import com.profico.smartmarina.data.model.AddShipsResponse
-import com.profico.smartmarina.data.model.LoginRequest
-import com.profico.smartmarina.data.model.LoginResponse
+import com.profico.smartmarina.data.model.*
 import com.profico.smartmarina.data.remote.ApiService
 import org.koin.core.KoinComponent
 import org.koin.core.inject
@@ -53,6 +50,28 @@ class Repository : KoinComponent {
                 }
             }
             override fun onFailure(call: Call<AddShipsResponse>, t: Throwable) {
+
+            }
+        })
+
+        return returnValue
+    }
+
+    fun callAllDocks(startdate2: String, enddate2: String, boattype2: String, function: (List<Dokovi>) -> Unit): GetAllDocksResponse? {
+
+        var returnValue : GetAllDocksResponse? = null
+
+        //val request = GetAllDocksRequest(startDate2 = startdate2, endDate2 = enddate2, boatType2 = boattype2)
+
+        apiService.callAllDocks2(startDate2 = startdate2, endDate2 = enddate2, boatType2 = boattype2).enqueue(object : Callback<GetAllDocksResponse> {
+            override fun onResponse(call: Call<GetAllDocksResponse>, response: Response<GetAllDocksResponse>) {
+                if (response.isSuccessful) {
+                    returnValue = response.body()
+                    println(returnValue)
+                    returnValue?.allDocks?.let { function.invoke(it) }
+                }
+            }
+            override fun onFailure(call: Call<GetAllDocksResponse>, t: Throwable) {
 
             }
         })

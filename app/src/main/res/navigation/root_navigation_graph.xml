@@ -143,6 +143,7 @@
         android:id="@+id/successFragment"
         android:name="com.profico.smartmarina.ui.SuccessFragment"
         android:label="fragment_success"
-        tools:layout="@layout/fragment_success" />
+        tools:layout="@layout/fragment_success" >
+    </fragment>
 
 </navigation>

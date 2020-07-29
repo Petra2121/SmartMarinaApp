@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.profico.smartmarina.ListAdapter
 import com.profico.smartmarina.R
 import com.profico.smartmarina.data.model.DataShips
+import kotlinx.android.synthetic.main.fragment_home_screen.*
 import kotlinx.android.synthetic.main.fragment_home_screen.view.*
 import kotlinx.android.synthetic.main.fragment_ships.*
 
@@ -27,8 +28,7 @@ class ShipsFragment : BaseFragment() {
     override fun setupView() {
         btnAddNewShip.setOnClickListener {
             findNavController().navigate(ShipsFragmentDirections.actionShipsFragmentToAddShipFragment("", args.arrivalDate, args.departureDate,
-                args.shipSize.toString()
-            ))
+                args.shipSize.toString(), args.passengerNumber))
         }
 
         recyclerShips.apply {
@@ -39,7 +39,7 @@ class ShipsFragment : BaseFragment() {
             shipsAdapter = ListAdapter(ShipsList) {
 
                 findNavController().navigate(ShipsFragmentDirections.actionShipsFragmentToNewScreenFragment(it.shipName,
-                    args.arrivalDate, args.departureDate, args.shipSize.toString()))
+                    args.arrivalDate, args.departureDate, args.shipSize.toString(), args.passengerNumber))
             }
 
             adapter = shipsAdapter

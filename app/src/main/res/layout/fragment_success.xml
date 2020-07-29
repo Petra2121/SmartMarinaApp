@@ -182,17 +182,20 @@
         app:layout_constraintStart_toEndOf="@+id/priceSuc"
         app:layout_constraintTop_toBottomOf="@+id/dateSuc2" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageSuc"
+    <Button
+        android:id="@+id/ok_button"
         android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/successimage"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="128dp"
+        android:background="@drawable/button_rectangle"
+        android:fontFamily="@font/san_francisco"
+        android:text="ok"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/priceSuc"
-        app:layout_constraintVertical_bias="0.374" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

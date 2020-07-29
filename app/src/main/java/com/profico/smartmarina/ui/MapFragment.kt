@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.profico.smartmarina.R
 import kotlinx.android.synthetic.main.fragment_map.*
 import org.koin.core.KoinComponent
@@ -14,6 +15,7 @@ import org.koin.core.KoinComponent
  * A simple [Fragment] subclass.
  */
 class MapFragment : BaseFragment(){
+    val args : MapFragmentArgs by navArgs()
     override fun getLayout() = R.layout.fragment_map
     override fun hasToolbar() = false
 

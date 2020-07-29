@@ -2,6 +2,7 @@ package com.profico.smartmarina.ui
 
 import android.app.DatePickerDialog
 import android.os.Bundle
+import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.profico.smartmarina.R
 import kotlinx.android.synthetic.main.fragment_home_screen.*
 import kotlinx.android.synthetic.main.fragment_payment.*
+import org.w3c.dom.Text
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -27,7 +29,24 @@ class PaymentFragment : BaseFragment() {
 
     override fun setupView() {
         btn_pay.setOnClickListener {
-            findNavController().navigate(PaymentFragmentDirections.actionPaymentFragmentToSuccessFragment())
+            if( TextUtils.isEmpty(cardNumber.getText())) {
+                cardNumber.setError("Card number is required!");
+            }
+            else if( TextUtils.isEmpty(cardCcv.getText())) {
+                cardCcv.setError("CCV is required!");
+            }
+            else if (cardDate!!.text.equals("")){
+                cardDate.setError("Date is required!")
+            }
+            else if( TextUtils.isEmpty(cardName.getText())) {
+                cardName.setError("First name is required!");
+            }
+            else if( TextUtils.isEmpty(cardSurname.getText())) {
+                cardSurname.setError("Last name is required!");
+            }
+            else {
+                findNavController().navigate(PaymentFragmentDirections.actionPaymentFragmentToSuccessFragment())
+            }
         }
         pickCardDate()
     }
@@ -42,13 +61,14 @@ class PaymentFragment : BaseFragment() {
 
     private fun pickCardDate() {
         cardDate.setOnClickListener {
-            DatePickerDialog(
+            val datePicker = DatePickerDialog(
                 requireContext(), dateSetCard, cal.get(Calendar.YEAR),
                 cal.get(Calendar.MONTH),
                 cal.get(Calendar.DAY_OF_MONTH)
-            ).show()
+            )
+            datePicker.datePicker.minDate = Calendar.getInstance().timeInMillis
+            datePicker.show()
         }
-
     }
 
     private fun updateCardDateInView() {

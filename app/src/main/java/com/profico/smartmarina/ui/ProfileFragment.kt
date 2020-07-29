@@ -33,6 +33,9 @@ class ProfileFragment : BaseFragment() {
             findNavController().navigate(ProfileFragmentDirections.actionProfileFragmentToMyReservationsFragment())
         }
 
+        log_out.setOnClickListener {
+            findNavController().navigate(ProfileFragmentDirections.actionProfileFragmentToLoginFragment())
+        }
     }
 
 

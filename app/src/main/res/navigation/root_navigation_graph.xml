@@ -15,8 +15,6 @@
         <action
             android:id="@+id/action_splashFragment_to_loginFragment"
             app:destination="@id/loginFragment"
-            app:popUpTo="@id/loginFragment"
-            app:popUpToInclusive="true"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"/>
 
@@ -33,7 +31,10 @@
             app:destination="@id/registrationFragment" />
         <action
             android:id="@+id/action_loginFragment_to_homeScreenFragment"
-            app:destination="@id/homeScreenFragment" />
+            app:destination="@id/homeScreenFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"
+            />
 
     </fragment>
     <fragment
@@ -49,16 +50,10 @@
         tools:layout="@layout/fragment_home_screen" >
         <action
             android:id="@+id/action_homeScreenFragment_to_shipsFragment"
-            app:destination="@id/shipsFragment" />
-        <argument
-            android:name="shipName2"
-            app:argType="string"/>
+            app:destination="@id/shipsFragment"/>
         <action
             android:id="@+id/action_homeScreenFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
-        <action
-            android:id="@+id/action_homeScreenFragment_to_mapFragment"
-            app:destination="@id/mapFragment" />
     </fragment>
     <fragment
         android:id="@+id/shipsFragment"
@@ -68,16 +63,25 @@
         <action
             android:id="@+id/action_shipsFragment_to_addShipFragment"
             app:destination="@id/addShipFragment"/>
-        <argument
-            android:name="shipName2"
-            app:argType="string" />
         <action
-            android:id="@+id/action_shipsFragment_to_homeScreenFragment"
-            app:destination="@id/homeScreenFragment" >
+            android:id="@+id/action_shipsFragment_to_newScreenFragment"
+            app:destination="@id/newScreenFragment" />
         <argument
             android:name="shipName2"
             app:argType="string" />
-        </action>
+        <argument
+            android:name="arrivalDate"
+            app:argType="string"/>
+        <argument
+            android:name="departureDate"
+            app:argType="string"/>
+        <argument
+            android:name="shipSize"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="passengerNumber"
+            app:argType="integer"/>
     </fragment>
     <fragment
         android:id="@+id/addShipFragment"
@@ -90,6 +94,18 @@
         <argument
             android:name="shipName2"
             app:argType="string"/>
+        <argument
+            android:name="arrivalDate"
+            app:argType="string"/>
+        <argument
+            android:name="departureDate"
+            app:argType="string"/>
+        <argument
+            android:name="shipSize"
+            app:argType="string"/>
+        <argument
+            android:name="passengerNumber"
+            app:argType="integer"/>
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -105,6 +121,9 @@
         <action
             android:id="@+id/action_profileFragment_to_marinaInfoFragment"
             app:destination="@id/marinaInfoFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/myReservationsFragment"
@@ -128,7 +147,23 @@
         tools:layout="@layout/fragment_map" >
         <action
             android:id="@+id/action_mapFragment_to_paymentFragment"
-            app:destination="@id/paymentFragment" />
+            app:destination="@id/paymentFragment"
+            />
+        <argument
+            android:name="shipName2"
+            app:argType="string"/>
+        <argument
+            android:name="arrivalDate"
+            app:argType="string"/>
+        <argument
+            android:name="departureDate"
+            app:argType="string"/>
+        <argument
+            android:name="shipSize"
+            app:argType="string"/>
+        <argument
+            android:name="passengerNumber"
+            app:argType="integer"/>
     </fragment>
     <fragment
         android:id="@+id/paymentFragment"
@@ -144,6 +179,36 @@
         android:name="com.profico.smartmarina.ui.SuccessFragment"
         android:label="fragment_success"
         tools:layout="@layout/fragment_success" >
+        <action
+            android:id="@+id/action_successFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newScreenFragment"
+        android:name="com.profico.smartmarina.ui.NewScreenFragment"
+        android:label="fragment_new_screen"
+        tools:layout="@layout/fragment_new_screen" >
+        <action
+            android:id="@+id/action_newScreenFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_newScreenFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+        <argument
+            android:name="shipName2"
+            app:argType="string"/>
+        <argument
+            android:name="arrivalDate"
+            app:argType="string"/>
+        <argument
+            android:name="departureDate"
+            app:argType="string"/>
+        <argument
+            android:name="shipSize"
+            app:argType="string"/>
+        <argument
+            android:name="passengerNumber"
+            app:argType="integer"/>
     </fragment>
 
 </navigation>

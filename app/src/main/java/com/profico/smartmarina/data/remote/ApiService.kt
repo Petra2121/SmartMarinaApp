@@ -22,6 +22,9 @@ interface ApiService {
         @Body loginRequest: LoginRequest
     ): Call<LoginResponse>
 
+    @GET(ENDPOINT)
+    fun call2(): Call<ShipsResponse>
+
     @POST(ENDPOINT)
     fun callAdd(
         @Body addShipsRequest: AddShipsRequest

@@ -1,11 +1,17 @@
 package com.profico.smartmarina.ui
 
 import android.app.DatePickerDialog
+import android.content.Context
+import android.text.TextUtils
+import android.view.View
+import android.view.inputmethod.InputMethodManager
+import android.util.JsonReader
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.profico.smartmarina.R
 import kotlinx.android.synthetic.main.fragment_add_ship.*
 import kotlinx.android.synthetic.main.fragment_home_screen.*
+import kotlinx.android.synthetic.main.fragment_payment.*
 import org.koin.core.KoinComponent
 import java.text.SimpleDateFormat
 import java.util.*
@@ -18,34 +24,41 @@ class HomeScreenFragment : BaseFragment(), KoinComponent {
 
     private val cal: Calendar = Calendar.getInstance()
 
-    val args : HomeScreenFragmentArgs by navArgs()
-
     override fun getLayout() = R.layout.fragment_home_screen
 
     override fun hasToolbar() = false
 
     override fun setupView() {
-        ship.setOnClickListener {
-            findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToShipsFragment(""))
-        }
 
-        availability.setOnClickListener {
-        findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToMapFragment())
-        }
+
+        view?.hideKeyboard()
+
+        pickArrivalDate()
+        pickDepartureDate()
 
         profile.setOnClickListener {
             findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToProfileFragment())
         }
 
-        pickArrivalDate()
-        pickDepartureDate()
-
-        val datearr = dateOfArrival.text.toString()
-
-        val x = args.shipName2
-        if(args.shipName2!="")
-            ship.text = args.shipName2
+        ship.setOnClickListener {
+            if (dateOfArrival!!.text.equals("")) {
+                dateOfArrival.setError("Date od arrival is required!")
+            }
+            else if (dateOfArrival!!.text.equals("")) {
+                dateOfArrival.setError("Date od department is required!")
+            }
+            else {
+                findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToShipsFragment("", dateOfArrival.text.toString(), dateOfDeparture.text.toString(), "", Integer.parseInt(passengers.text.toString())))
+            }
+        }
     }
+
+/***/
+    fun View.hideKeyboard() {
+        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(windowToken, 0)
+    }
+/***/
 
     private val dateSetListenerArrival =
         DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
@@ -63,41 +76,41 @@ class HomeScreenFragment : BaseFragment(), KoinComponent {
             updateDepartureDateInView()
         }
 
-    private fun pickArrivalDate() {
+    private fun pickArrivalDate() { //otvara se izbornik (kalendar)
         dateOfArrival.setOnClickListener {
-            DatePickerDialog(
+            val datePicker = DatePickerDialog(
                 requireContext(), dateSetListenerArrival, cal.get(Calendar.YEAR),
                 cal.get(Calendar.MONTH),
                 cal.get(Calendar.DAY_OF_MONTH)
-            ).show()
+            )
+            datePicker.datePicker.minDate=Calendar.getInstance().timeInMillis
+            datePicker.show()
         }
-
     }
-
 
     private fun pickDepartureDate() {
         dateOfDeparture.setOnClickListener {
-            DatePickerDialog(
+            val datePicker = DatePickerDialog(
                 requireContext(), dateSetListenerDeparture, cal.get(Calendar.YEAR),
                 cal.get(Calendar.MONTH),
                 cal.get(Calendar.DAY_OF_MONTH)
-            ).show()
+            )
+            datePicker.datePicker.minDate=Calendar.getInstance().timeInMillis
+            datePicker.show()
         }
 
     }
 
-    private fun updateArrivalDateInView() {
-        val myFormat = "dd/MM/yyyy"
+    private fun updateArrivalDateInView(){ //da bi se datum prikaza u button
+        val myFormat = "yyyy-MM-dd"
         val sdf = SimpleDateFormat(myFormat, Locale.ITALY)
         dateOfArrival!!.text = sdf.format(cal.getTime())
-
     }
 
     private fun updateDepartureDateInView() {
-        val myFormat = "dd/MM/yyyy"
+        val myFormat = "yyyy-MM-dd"
         val sdf = SimpleDateFormat(myFormat, Locale.ITALY)
         dateOfDeparture!!.text = sdf.format(cal.getTime())
-
     }
 
 }

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -23,6 +24,8 @@ import com.google.android.gms.maps.model.Marker
 /**
  * A simple [Fragment] subclass.
  */
+class MapFragment : BaseFragment(){
+    val args : MapFragmentArgs by navArgs()
 
 class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
 

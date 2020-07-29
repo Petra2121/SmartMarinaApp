@@ -61,19 +61,33 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
-        android:padding="15dp"
-        android:text="Marina Information"
-        android:textSize="22sp"
         android:background="@drawable/shapecom"
         android:backgroundTint="@color/blue"
-        android:textColor="@color/white"
         android:fontFamily="@font/san_francisco"
+        android:padding="15dp"
+        android:text="Marina Information"
+        android:textColor="@color/white"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/myReservProf" />
 
-
-
+    <Button
+        android:id="@+id/log_out"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="96dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/san_francisco"
+        android:text="Log out"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/marinaInfoProf" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

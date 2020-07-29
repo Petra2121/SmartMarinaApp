@@ -16,6 +16,8 @@ class SplashFragment : BaseFragment() {
 
     override fun setupView() {
 
+        println("SPLASH SCREEN!")
+
         Handler().postDelayed({
             findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToLoginFragment())
         }, 1000)

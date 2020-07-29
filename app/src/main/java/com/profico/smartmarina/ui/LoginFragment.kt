@@ -46,4 +46,6 @@ class LoginFragment : BaseFragment(), KoinComponent {
 // Call method in repository -> Repository fun call retrofit
 fun callServer() {
     Repository().callServer("")
+
+   // Repository().callServer("")
 }

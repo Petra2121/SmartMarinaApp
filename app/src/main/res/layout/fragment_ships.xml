@@ -11,6 +11,7 @@
         android:id="@+id/recyclerShips"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scrollbars="vertical"
         tools:listitem="@layout/row_ship_layout"
         >
 

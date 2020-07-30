@@ -11,6 +11,8 @@ import com.profico.smartmarina.data.Repository
 import com.profico.smartmarina.data.model.Boats
 import kotlinx.android.synthetic.main.fragment_add_ship.*
 import com.profico.smartmarina.data.model.DataShips
+import kotlinx.android.synthetic.main.fragment_add_ship.shipName
+import kotlinx.android.synthetic.main.fragment_add_ship.view.*
 import kotlinx.android.synthetic.main.fragment_home_screen.view.*
 import kotlinx.android.synthetic.main.fragment_ships.*
 
@@ -41,7 +43,7 @@ class ShipsFragment : BaseFragment() {
              //set the custom adapter to the RecyclerView
             shipsAdapter = ListAdapter{
 
-                findNavController().navigate(ShipsFragmentDirections.actionShipsFragmentToNewScreenFragment(it.shipName,
+                findNavController().navigate(ShipsFragmentDirections.actionShipsFragmentToNewScreenFragment(it.toString(),
                     args.arrivalDate, args.departureDate, args.shipSize.toString()))
             }
 

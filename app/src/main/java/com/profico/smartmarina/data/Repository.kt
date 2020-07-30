@@ -72,12 +72,42 @@ class Repository : KoinComponent {
                 if (response.isSuccessful) {
                     returnValue = response.body()
                     println(returnValue)
-                    returnValue?.data?.let { function.invoke(it) }
+                    returnValue?.data.let {
+                        if (it != null) {
+                            function.invoke(it)
+                        }
+                    }
                 }
             }
             override fun onFailure(call: Call<ShipsResponse>, t: Throwable) {
 
             }
+        })
+
+        return returnValue
+    }
+    fun getMyReservations ( reservationname: String, function: (List<MyReservations>) -> Unit): MyReservationsResponse? {
+        // shipid: String, , shipregistration: String, shiptype: String,
+        var returnValue : MyReservationsResponse? = null
+
+        val request = MyReservationsRequest(reservationName= reservationname)
+        // shipId = shipid,, shipRegistration = shipregistration, shipType = shiptype
+        apiService.callReservations().enqueue(object : Callback<MyReservationsResponse> {
+            override fun onResponse(call: Call<MyReservationsResponse>, response: Response<MyReservationsResponse>) {
+                if (response.isSuccessful) {
+                    returnValue = response.body()
+                    println(returnValue)
+                    returnValue?.bookings?.data.let {
+                        if (it != null) {
+                            function.invoke(it)
+                        }
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<MyReservationsResponse>, t: Throwable) {
+            }
+
         })
 
         return returnValue

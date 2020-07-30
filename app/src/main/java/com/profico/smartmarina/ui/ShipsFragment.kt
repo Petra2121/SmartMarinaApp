@@ -41,7 +41,7 @@ class ShipsFragment : BaseFragment() {
              //set the custom adapter to the RecyclerView
             shipsAdapter = ListAdapter{
 
-                findNavController().navigate(ShipsFragmentDirections.actionShipsFragmentToNewScreenFragment(it.shipName,
+                findNavController().navigate(ShipsFragmentDirections.actionShipsFragmentToNewScreenFragment(it.toString(),
                     args.arrivalDate, args.departureDate, args.shipSize.toString(), args.passengerNumber))
             }
 

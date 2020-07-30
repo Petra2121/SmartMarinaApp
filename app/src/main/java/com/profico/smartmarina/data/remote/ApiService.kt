@@ -1,9 +1,6 @@
 package com.profico.smartmarina.data.remote
 
-import com.profico.smartmarina.data.model.AddShipsRequest
-import com.profico.smartmarina.data.model.AddShipsResponse
-import com.profico.smartmarina.data.model.LoginRequest
-import com.profico.smartmarina.data.model.LoginResponse
+import com.profico.smartmarina.data.model.*
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET

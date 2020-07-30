@@ -9,6 +9,8 @@ import androidx.navigation.fragment.navArgs
 import com.profico.smartmarina.R
 import com.profico.smartmarina.data.Repository
 import kotlinx.android.synthetic.main.fragment_add_ship.*
+import kotlinx.android.synthetic.main.fragment_home_screen.*
+
 /**
  * A simple [Fragment] subclass.
  */
@@ -40,7 +42,7 @@ class AddShipFragment : BaseFragment() {
                     saveShip.setOnClickListener {
                         val shipNameA = shipName.text.toString()
                         val regnumb = shipRegistration.text.toString()
-                        findNavController().navigate(AddShipFragmentDirections.actionAddShipFragmentToShipsFragment(shipNameA, args.arrivalDate, args.departureDate, selectedSize))
+                        findNavController().navigate(AddShipFragmentDirections.actionAddShipFragmentToShipsFragment(shipNameA, args.arrivalDate, args.departureDate, selectedSize, args.passengerNumber))
                         /*proba*/
                         callAddServer(shipNameA, regnumb, selectedSize, "5d7a514b5d2c12c7449be040")
                     }

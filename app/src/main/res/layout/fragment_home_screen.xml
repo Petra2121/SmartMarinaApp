@@ -10,6 +10,23 @@
     tools:context=".ui.HomeScreenFragment">
 
     <TextView
+        android:id="@+id/to2"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:fontFamily="@font/san_francisco"
+        android:gravity="center"
+        android:maxLines="2"
+        android:text="number of passengers"
+        android:textAllCaps="true"
+        android:textColor="#0B0909"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/from" />
+
+    <TextView
         android:id="@+id/chooseDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,6 +35,7 @@
         android:text="SELECT DATE"
         android:textColor="@color/blue"
         android:textSize="29sp"
+        android:textAllCaps="true"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +107,7 @@
         android:id="@+id/ship"
         android:layout_width="155dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="256dp"
+        android:layout_marginBottom="156dp"
         android:background="@drawable/button_rectangle"
         android:fontFamily="@font/san_francisco"
         android:text="ADD SHIP"
@@ -114,5 +132,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/passengers"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:ems="10"
+        android:gravity="center"
+        android:background="@drawable/date_button"
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="20dp"
+        android:padding="7dp"
+        android:hint="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.72"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateOfDeparture" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

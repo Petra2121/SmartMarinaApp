@@ -79,6 +79,9 @@
             android:name="shipSize"
             app:argType="string"
             app:nullable="true" />
+        <argument
+            android:name="passengerNumber"
+            app:argType="integer"/>
     </fragment>
     <fragment
         android:id="@+id/addShipFragment"
@@ -100,6 +103,9 @@
         <argument
             android:name="shipSize"
             app:argType="string"/>
+        <argument
+            android:name="passengerNumber"
+            app:argType="integer"/>
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -115,6 +121,9 @@
         <action
             android:id="@+id/action_profileFragment_to_marinaInfoFragment"
             app:destination="@id/marinaInfoFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/myReservationsFragment"
@@ -140,6 +149,21 @@
             android:id="@+id/action_mapFragment_to_paymentFragment"
             app:destination="@id/paymentFragment"
             />
+        <argument
+            android:name="shipName2"
+            app:argType="string"/>
+        <argument
+            android:name="arrivalDate"
+            app:argType="string"/>
+        <argument
+            android:name="departureDate"
+            app:argType="string"/>
+        <argument
+            android:name="shipSize"
+            app:argType="string"/>
+        <argument
+            android:name="passengerNumber"
+            app:argType="integer"/>
     </fragment>
     <fragment
         android:id="@+id/paymentFragment"
@@ -154,7 +178,11 @@
         android:id="@+id/successFragment"
         android:name="com.profico.smartmarina.ui.SuccessFragment"
         android:label="fragment_success"
-        tools:layout="@layout/fragment_success" />
+        tools:layout="@layout/fragment_success" >
+        <action
+            android:id="@+id/action_successFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/newScreenFragment"
         android:name="com.profico.smartmarina.ui.NewScreenFragment"
@@ -178,6 +206,9 @@
         <argument
             android:name="shipSize"
             app:argType="string"/>
+        <argument
+            android:name="passengerNumber"
+            app:argType="integer"/>
     </fragment>
 
 </navigation>

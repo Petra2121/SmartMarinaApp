@@ -30,7 +30,7 @@ class NewScreenFragment : BaseFragment(), KoinComponent {
 
     override fun setupView() {
         availability.setOnClickListener {
-            findNavController().navigate(NewScreenFragmentDirections.actionNewScreenFragmentToMapFragment())
+            findNavController().navigate(NewScreenFragmentDirections.actionNewScreenFragmentToMapFragment(args.shipName2, args.arrivalDate, args.departureDate, args.shipSize, args.passengerNumber))
         }
 
         profile.setOnClickListener {

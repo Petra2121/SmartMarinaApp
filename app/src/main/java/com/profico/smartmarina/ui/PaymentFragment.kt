@@ -41,9 +41,9 @@ class PaymentFragment : BaseFragment() {
             else if( TextUtils.isEmpty(cardName.getText())) {
                 cardName.setError("First name is required!");
             }
-            else if( TextUtils.isEmpty(cardSurname.getText())) {
-                cardSurname.setError("Last name is required!");
-            }
+//            else if( TextUtils.isEmpty(cardSurname.getText())) {
+//                cardSurname.setError("Last name is required!");
+//            }
             else {
                 findNavController().navigate(PaymentFragmentDirections.actionPaymentFragmentToSuccessFragment())
             }

@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.profico.smartmarina.data.model.Boats
+import com.profico.smartmarina.data.model.Reservations
 
 class ShipsViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     RecyclerView.ViewHolder(inflater.inflate(R.layout.row_ship_layout, parent, false)) {
@@ -16,6 +17,7 @@ class ShipsViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
 
     fun bind(ship: Boats) {
         mShipNameView?.text = ship.shipName
+        /*val hi= ship.shipType*/
     }
 
 }

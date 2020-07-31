@@ -41,7 +41,8 @@ class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
     var googleMap: GoogleMap? = null
 
     var listOfDocs: List<Dokovi>? = null
-    var listOfMarkers: MutableList<Marker>? = null
+
+    var lastClickedMarker : Marker? = null
 
     var lastClickedIndex = 0
 
@@ -89,13 +90,11 @@ class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
                     berthType2.text = dokovi.position2
                     priceDock.text = dokovi.price2
 
-                    listOfMarkers?.add(marker)
                 }
             }
             //icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN))
             //.icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_location));
             //listOfMarkers?.get(0)?.setIcon()
-           listOfMarkers?.get(0)?.setIcon(activity?.let { it1 -> bitmapDescriptorFromVector(it1, R.drawable.ic_location_clicked_svg) })
         }
     }
 
@@ -108,10 +107,13 @@ class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
             priceDock.text = price2
         }
 
-        listOfMarkers?.get(currentIndex)?.setIcon(activity?.let { it1 -> bitmapDescriptorFromVector(it1, R.drawable.ic_location_clicked_svg) })
-        listOfMarkers?.get(lastClickedIndex)?.setIcon(activity?.let { it1 -> bitmapDescriptorFromVector(it1, R.drawable.ic_location_svg) })
-        //listOfMarkers?.get(currentIndex).setIcon()
-        //listOfMarkers?.get(lastClickedIndex).setIcon()
+        lastClickedMarker?.let {
+            it.setIcon(bitmapDescriptorFromVector(requireContext(), R.drawable.ic_location_svg))
+        }
+
+        marker.setIcon(bitmapDescriptorFromVector(requireContext(), R.drawable.ic_location_clicked_svg))
+
+        lastClickedMarker = marker
 
         lastClickedIndex = currentIndex
 
@@ -126,7 +128,14 @@ class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
         vectorDrawable.draw(canvas);
         return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
-    fun sendReservation (numberofpassengers: Int, dateofarrival: String, dateofdeparture: String, userr:String, dockk:String, boatt:String){
-    Repository().sendReservation(numberofpassengers, dateofarrival, dateofdeparture, userr, dockk, boatt)
+    fun sendReservation (numberofpassengers: Int, dateofarrival: String, dateofdeparture: String, userr:String, dockk:String, boatt:String) {
+        Repository().sendReservation(
+            numberofpassengers,
+            dateofarrival,
+            dateofdeparture,
+            userr,
+            dockk,
+            boatt
+        )
     }
 }

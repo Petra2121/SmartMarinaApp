@@ -134,7 +134,15 @@ class Repository : KoinComponent {
     }
 
     /****/
-    fun sendReservation(numberofpassengers: Int, dateofarrival: String, dateofdeparture: String, userr:String, dockk:String, boatt:String): SendReservationResponse? {
+    fun sendReservation(
+        numberofpassengers: Int,
+        dateofarrival: String,
+        dateofdeparture: String,
+        userr: String,
+        dockk: String,
+        boatt: String,
+        function: (String) -> Unit
+    ): SendReservationResponse? {
 
         var returnValue : SendReservationResponse? = null
         val request = SendReservationRequest(numberOfPassengers2= numberofpassengers, dateOfArrival2 = dateofarrival, dateOfDeparture2 = dateofdeparture, user2 = userr, dock2 = dockk, boat2 = boatt)
@@ -144,6 +152,9 @@ class Repository : KoinComponent {
                 if (response.isSuccessful) {
                     returnValue = response.body()
                     println(returnValue)
+                    returnValue?.confirmedReservation?.resid?.let {
+                        function.invoke(it)
+                    }
                 }
             }
             override fun onFailure(call: Call<SendReservationResponse>, t: Throwable) {
@@ -153,4 +164,22 @@ class Repository : KoinComponent {
     }
 
 
+    fun getReservation(id: String, function: (Reservation) -> Unit): SuccessResponse? {
+
+        var returnValue : SuccessResponse? = null
+
+        apiService.callReservations(id2 = id).enqueue(object : Callback<SuccessResponse> {
+            override fun onResponse(call: Call<SuccessResponse>, response: Response<SuccessResponse>) {
+                if (response.isSuccessful) {
+                    returnValue = response.body()
+                    println(returnValue)
+                    returnValue?.Res?.Data?.first()?.let { function.invoke(it) }
+                }
+            }
+            override fun onFailure(call: Call<SuccessResponse>, t: Throwable) {
+
+            }
+        })
+        return returnValue
+    }
 }

@@ -40,18 +40,15 @@ interface ApiService {
         @Query("type") boatType2: String
     ): Call<GetAllDocksResponse>
 
+
+
     @POST("reservations")
     fun callRes(
         @Body sendReservationRequest: SendReservationRequest
     ): Call<SendReservationResponse>
 
-    /*@GET("reservations")
-    fun getReservation2(
-        @Query("numberOfPassengers") numberOfPassengers2: Int,
-        @Query("dateOfArrival") dateOfArrival2: String,
-        @Query("dateOfDeparture") dateOfDeparture2: String,
-        @Query("user") user2: String,
-        @Query("dock") dock2: String,
-        @Query("boat") boat2: String
-    ): Call<GetReservationResponse>*/
+    @GET("reservations")
+    fun callReservations(
+        @Query("_id") id2: String
+    ): Call<SuccessResponse>
 }

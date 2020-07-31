@@ -181,6 +181,9 @@
         <action
             android:id="@+id/action_paymentFragment_to_successFragment"
             app:destination="@id/successFragment" />
+        <argument
+            android:name="resId"
+            app:argType="string"/>
     </fragment>
     <fragment
         android:id="@+id/successFragment"
@@ -190,6 +193,9 @@
         <action
             android:id="@+id/action_successFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <argument
+            android:name="resId"
+            app:argType="string"/>
     </fragment>
     <fragment
         android:id="@+id/newScreenFragment"

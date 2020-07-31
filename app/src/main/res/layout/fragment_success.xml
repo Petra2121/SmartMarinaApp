@@ -25,18 +25,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <ImageButton
-        android:id="@+id/goToProfile"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:background="@color/white"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:clickable="true"
-        android:src="@drawable/profile_icon_foreground"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/reservationNum"
         android:layout_width="200dp"
@@ -125,7 +113,7 @@
         app:layout_constraintTop_toBottomOf="@+id/boatReg2" />
 
     <TextView
-        android:id="@+id/dateSuc"
+        android:id="@+id/dateASuc"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -140,7 +128,7 @@
         app:layout_constraintTop_toBottomOf="@+id/dockID" />
 
     <TextView
-        android:id="@+id/dateSuc2"
+        android:id="@+id/dateASuc2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -150,29 +138,57 @@
         android:textColor="@color/blue"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/dateSuc"
+        app:layout_constraintTop_toBottomOf="@+id/dockID2" />
+
+    <TextView
+        android:id="@+id/dateDSuc"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/san_francisco"
+        android:text="Date of departure:"
+        android:textColor="@color/blue"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dockID" />
+
+    <TextView
+        android:id="@+id/dateDSuc2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/san_francisco"
+        android:gravity="center_horizontal"
+        android:text="07.06.2020."
+        android:textColor="@color/blue"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dockID2" />
 
     <TextView
         android:id="@+id/priceSuc"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="19dp"
         android:fontFamily="@font/san_francisco"
         android:text="Price:"
-        android:textStyle="bold"
         android:textColor="@color/blue"
         android:textSize="22sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+
         app:layout_constraintHorizontal_bias="0.194"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateSuc" />
+        app:layout_constraintTop_toBottomOf="@+id/dateDSuc" />
 
     <TextView
         android:id="@+id/priceSuc2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/san_francisco"
         android:gravity="center_horizontal"
         android:text="100$"
@@ -180,7 +196,7 @@
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/priceSuc"
-        app:layout_constraintTop_toBottomOf="@+id/dateSuc2" />
+        app:layout_constraintTop_toBottomOf="@+id/dateDSuc2" />
 
     <Button
         android:id="@+id/ok_button"

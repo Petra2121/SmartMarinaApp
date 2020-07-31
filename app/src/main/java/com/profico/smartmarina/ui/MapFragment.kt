@@ -68,7 +68,7 @@ class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
             val dock_id = listOfDocs?.get(lastClickedIndex)?.id2
             findNavController().navigate(MapFragmentDirections.actionMapFragmentToPaymentFragment())
             if (dock_id != null) {
-                sendReservation(args.passengerNumber, args.arrivalDate, args.departureDate, "5d7a514b5d2c12c7449be040", dock_id, )
+                sendReservation(args.passengerNumber, args.arrivalDate, args.departureDate, "5d7a514b5d2c12c7449be040", dock_id, args.shipId)
             }
         }
     }

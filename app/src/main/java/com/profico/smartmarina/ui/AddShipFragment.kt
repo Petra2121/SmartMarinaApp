@@ -43,7 +43,7 @@ class AddShipFragment : BaseFragment() {
                     saveShip.setOnClickListener {
                         val shipNameA = shipName.text.toString()
                         val regnumb = shipRegistration.text.toString()
-                        findNavController().navigate(AddShipFragmentDirections.actionAddShipFragmentToShipsFragment(shipNameA, args.arrivalDate, args.departureDate, selectedSize, args.passengerNumber))
+                        findNavController().navigate(AddShipFragmentDirections.actionAddShipFragmentToShipsFragment(shipNameA, args.arrivalDate, args.departureDate, selectedSize, args.passengerNumber, ""))
                         /*proba*/
                         callAddServer(shipNameA, regnumb, selectedSize, "5d7a514b5d2c12c7449be040")
                     }

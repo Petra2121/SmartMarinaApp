@@ -82,6 +82,9 @@
         <argument
             android:name="passengerNumber"
             app:argType="integer"/>
+        <argument
+            android:name="shipId"
+            app:argType="string"/>
     </fragment>
     <fragment
         android:id="@+id/addShipFragment"
@@ -166,6 +169,9 @@
         <argument
             android:name="passengerNumber"
             app:argType="integer"/>
+        <argument
+            android:name="shipId"
+            app:argType="string"/>
     </fragment>
     <fragment
         android:id="@+id/paymentFragment"
@@ -211,6 +217,9 @@
         <argument
             android:name="passengerNumber"
             app:argType="integer"/>
+        <argument
+            android:name="shipId"
+            app:argType="string"/>
     </fragment>
 
 </navigation>

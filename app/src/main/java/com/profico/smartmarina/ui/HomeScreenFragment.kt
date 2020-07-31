@@ -51,7 +51,7 @@ class HomeScreenFragment : BaseFragment(), KoinComponent {
                 passengers.setError("Please enter number of passengers!")
             }
             else {
-                findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToShipsFragment("", dateOfArrival.text.toString(), dateOfDeparture.text.toString(), "", Integer.parseInt(passengers.text.toString())))
+                findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToShipsFragment("", dateOfArrival.text.toString(), dateOfDeparture.text.toString(), "", Integer.parseInt(passengers.text.toString()), ""))
             }
         }
     }

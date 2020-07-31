@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="8dp"
+    app:cardUseCompatPadding="true"
+    android:background="@color/blue"
+    android:layout_gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ReservationName"
+        android:text="Booking"
+        android:textSize="22sp"
+        android:fontFamily="@font/san_francisco"
+        android:textColor="@color/white"
+        android:background="@color/blue"
+        android:paddingBottom="10sp"
+        android:paddingTop="10sp"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal" />
+
+</androidx.cardview.widget.CardView>

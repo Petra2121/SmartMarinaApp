@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.profico.smartmarina.R
+import com.profico.smartmarina.data.model.Boats
 import kotlinx.android.synthetic.main.fragment_add_ship.*
 import kotlinx.android.synthetic.main.fragment_home_screen.*
 import kotlinx.android.synthetic.main.fragment_home_screen.dateOfArrival
@@ -11,6 +12,7 @@ import kotlinx.android.synthetic.main.fragment_home_screen.dateOfDeparture
 import kotlinx.android.synthetic.main.fragment_home_screen.profile
 import kotlinx.android.synthetic.main.fragment_new_screen.*
 import org.koin.core.KoinComponent
+import java.nio.file.Files.write
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -29,17 +31,21 @@ class NewScreenFragment : BaseFragment(), KoinComponent {
     override fun hasToolbar() = false
 
     override fun setupView() {
+
         availability.setOnClickListener {
             findNavController().navigate(NewScreenFragmentDirections.actionNewScreenFragmentToMapFragment(args.shipName2, args.arrivalDate, args.departureDate, args.shipSize, args.passengerNumber))
+
         }
 
         profile.setOnClickListener {
             findNavController().navigate(NewScreenFragmentDirections.actionNewScreenFragmentToProfileFragment())
         }
 
+
         //args.shipSize je odabrana velicina broda
-        if(args.shipName2!="")
-            shippp.text = args.shipName2
+
+        if (args.shipName2 != "")
+                shippp.text =args.shipName2
 
         if(args.arrivalDate!="")
             dateA.text=args.arrivalDate.toString()

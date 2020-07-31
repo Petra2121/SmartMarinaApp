@@ -10,12 +10,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
+import com.google.android.gms.maps.model.MarkerOptions
 import com.profico.smartmarina.R
 import com.profico.smartmarina.data.Repository
 import com.profico.smartmarina.data.model.Dokovi
@@ -36,8 +38,6 @@ class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
 
     lateinit var mapFragment : SupportMapFragment
     var googleMap : GoogleMap? = null
-
-    var dohvatiID : String? = null
 
     var listOfDocs : List<Dokovi>? = null
     var listOfMarkers : MutableList<Marker>? = null
@@ -66,7 +66,6 @@ class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
         map_button.setOnClickListener {
             findNavController().navigate(MapFragmentDirections.actionMapFragmentToPaymentFragment())
         }
-
     }
 
 
@@ -98,7 +97,6 @@ class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
             numberDock.text = number2
             berthType2.text = position2
             priceDock.text = price2
-            dohvatiID = number2
         }
 
                 listOfMarkers?.get(currentIndex)?.setIcon(activity?.let { it1 -> bitmapDescriptorFromVector(it1, R.drawable.ic_icon_clicked) })

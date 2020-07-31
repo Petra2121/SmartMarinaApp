@@ -7,6 +7,7 @@ data class GetAllDocksResponse (
 )
 
 data class Dokovi (
+    @Json(name = "_id") val id2: String,
     @Json(name = "number") val number2 : String,
     @Json(name = "offeringPrice") val price2 : String,
     @Json(name = "position") val position2 : String,

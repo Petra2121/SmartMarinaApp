@@ -47,7 +47,7 @@ class ShipsFragment : BaseFragment() {
             shipsAdapter = ListAdapter{
 
                 findNavController().navigate(ShipsFragmentDirections.actionShipsFragmentToNewScreenFragment(it.shipName,
-                    args.arrivalDate, args.departureDate, it.shipType, args.passengerNumber))
+                    args.arrivalDate, args.departureDate, it.shipType, args.passengerNumber, it.shipId))
             }
 
             adapter = shipsAdapter
@@ -70,6 +70,7 @@ class ShipsFragment : BaseFragment() {
     companion object {
         fun newInstance(): ShipsFragment = ShipsFragment()
     }
+
     fun getShipName() {
         Repository().getShipName("") {
             shipsAdapter?.notifyDataChange(it)

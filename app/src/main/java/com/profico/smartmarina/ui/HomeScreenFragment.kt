@@ -105,13 +105,13 @@ class HomeScreenFragment : BaseFragment(), KoinComponent {
     }
 
     private fun updateArrivalDateInView(){ //da bi se datum prikaza u button
-        val myFormat = "yyyy-MM-dd"
+        val myFormat = "dd/MM/yyyy"
         val sdf = SimpleDateFormat(myFormat, Locale.ITALY)
         dateOfArrival!!.text = sdf.format(cal.getTime())
     }
 
     private fun updateDepartureDateInView() {
-        val myFormat = "yyyy-MM-dd"
+        val myFormat = "dd/MM/yyyy"
         val sdf = SimpleDateFormat(myFormat, Locale.ITALY)
         dateOfDeparture!!.text = sdf.format(cal.getTime())
     }

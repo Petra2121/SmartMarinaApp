@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.profico.smartmarina.R
 import kotlinx.android.synthetic.main.fragment_home_screen.*
 import kotlinx.android.synthetic.main.fragment_payment.*
@@ -20,6 +21,8 @@ import java.util.*
  * A simple [Fragment] subclass.
  */
 class PaymentFragment : BaseFragment() {
+
+    val args : PaymentFragmentArgs by navArgs()
 
     private val cal: Calendar = Calendar.getInstance()
 
@@ -41,11 +44,8 @@ class PaymentFragment : BaseFragment() {
             else if( TextUtils.isEmpty(cardName.getText())) {
                 cardName.setError("First name is required!");
             }
-//            else if( TextUtils.isEmpty(cardSurname.getText())) {
-//                cardSurname.setError("Last name is required!");
-//            }
             else {
-                findNavController().navigate(PaymentFragmentDirections.actionPaymentFragmentToSuccessFragment())
+                findNavController().navigate(PaymentFragmentDirections.actionPaymentFragmentToSuccessFragment(args.resId))
             }
         }
         pickCardDate()

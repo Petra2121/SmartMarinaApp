@@ -5,14 +5,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.profico.smartmarina.ListAdapter
 import com.profico.smartmarina.R
 import com.profico.smartmarina.data.Repository
 import com.profico.smartmarina.data.model.Boats
-import kotlinx.android.synthetic.main.fragment_add_ship.*
-import com.profico.smartmarina.data.model.DataShips
-import kotlinx.android.synthetic.main.fragment_home_screen.*
-import kotlinx.android.synthetic.main.fragment_home_screen.view.*
 import kotlinx.android.synthetic.main.fragment_ships.*
 
 /**
@@ -23,6 +18,11 @@ class ShipsFragment : BaseFragment() {
     val args: ShipsFragmentArgs by navArgs()
 
     var shipsAdapter: ListAdapter? = null
+    var shipSize2 : String = "Small"
+
+    var newList : List<Boats>? = null
+    var listOfTypes : List<Boats>? = null
+    var listOfTipovi : MutableList<String>? = null
 
     override fun getLayout(): Int = R.layout.fragment_ships
 
@@ -42,7 +42,7 @@ class ShipsFragment : BaseFragment() {
             shipsAdapter = ListAdapter{
 
                 findNavController().navigate(ShipsFragmentDirections.actionShipsFragmentToNewScreenFragment(it.shipName,
-                    args.arrivalDate, args.departureDate, args.shipSize.toString(), args.passengerNumber))
+                    args.arrivalDate, args.departureDate, it.shipType, args.passengerNumber))
             }
 
             adapter = shipsAdapter
@@ -75,6 +75,8 @@ class ShipsFragment : BaseFragment() {
             shipsAdapter?.notifyDataChange(it)
         }
     }
+
+
 }
 
 //     fun fetchJson(){

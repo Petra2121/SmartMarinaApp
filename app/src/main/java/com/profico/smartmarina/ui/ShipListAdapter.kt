@@ -1,16 +1,14 @@
-package com.profico.smartmarina
+package com.profico.smartmarina.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.profico.smartmarina.ShipsViewHolder
 import com.profico.smartmarina.data.model.Boats
-import com.profico.smartmarina.data.model.DataShips
-import java.nio.file.Files.size
 
 class ListAdapter(
     private var list: List<Boats>? = null,
-    private val clickListener: (List<Boats>) -> Unit
-   // val brodovi: Brodovi
+    private val clickListener: (Boats) -> Unit
 )
     : RecyclerView.Adapter<ShipsViewHolder>() {
 
@@ -23,25 +21,21 @@ class ListAdapter(
         list?.get(position)?.let {ship ->
             holder.bind(ship)
             holder.itemView.setOnClickListener {
-                clickListener.invoke(listOf(ship))
+                clickListener.invoke(ship)
             }
         }
-       // val imena = brodovi.data.get(position)
-
-        //holder.itemView.recyclerShips?.text= imena.nam
     }
 
     override fun getItemCount(): Int {
         return if (list==null)
             0;
         else
-            list!!.size
+            list!!.size;
     }
 
     fun notifyDataChange(list: List<Boats>) {
         this.list = list
         notifyDataSetChanged()
     }
-
 
 }

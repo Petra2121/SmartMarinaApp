@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.profico.smartmarina.ListAdapter
 import com.profico.smartmarina.MyReservationsAdapter
 import com.profico.smartmarina.R
 import com.profico.smartmarina.data.Repository

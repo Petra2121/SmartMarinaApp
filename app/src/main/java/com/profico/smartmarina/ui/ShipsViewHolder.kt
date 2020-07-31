@@ -17,6 +17,7 @@ class ShipsViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
 
     fun bind(ship: Boats) {
         mShipNameView?.text = ship.shipName
+        /*val hi= ship.shipType*/
     }
 
 }

@@ -11,9 +11,8 @@ data class ShipsResponse(
 )
 
 data class Boats(
-    @Json(name = "_id") val shipId : String,
+    @Json(name="_id") val shipId : String,
     @Json(name = "name") val shipName : String ,
     @Json(name = "registration_number") val shipRegistration : String,
     @Json(name = "type") val shipType : String
-
 )

@@ -7,5 +7,4 @@ import com.squareup.moshi.Json
  */
 data class ShipsRequest(
     @Json(name = "name") val shipName : String
-
 )

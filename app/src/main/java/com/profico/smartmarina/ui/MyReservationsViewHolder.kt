@@ -18,7 +18,7 @@ class MyReservationsViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     }
 
     fun bind(reservation: MyReservations) {
-        mReservationNameView?.text = "Name: "+ '\t' + reservation.boat.boatName+'\n' + "Registration: "  + reservation.boat.boatRegistration + '\n'+ "Boat type: "+ reservation.boat.boatType +'\n'+"Reservation type: "+ reservation.reservationType+'\n'+ "Date of arrival: "+ reservation.reservationDateOfArrival.format()+'\n'+"Price: " +reservation.reservationTotalPrice
+        mReservationNameView?.text = "Name: "+ '\t' + reservation.boat.boatName+'\n' + "Registration: "  + reservation.boat.boatRegistration + '\n'+ "Boat type: "+ reservation.boat.boatType +'\n'+"Reservation type: "+ reservation.reservationType+'\n'+ "Date of arrival: "+ reservation.reservationDateOfArrival +'\n'+"Price: " +reservation.reservationTotalPrice
 
     }
 

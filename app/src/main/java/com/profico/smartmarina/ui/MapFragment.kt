@@ -1,31 +1,22 @@
 package com.profico.smartmarina.ui
 
-import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.profico.smartmarina.R
 import com.profico.smartmarina.data.Repository
 import com.profico.smartmarina.data.model.Dokovi
 import kotlinx.android.synthetic.main.fragment_map.*
-import org.koin.android.ext.android.bind
-import org.koin.core.KoinComponent
-import com.google.android.gms.maps.model.Marker
 
 /**
  * A simple [Fragment] subclass.
  */
-class MapFragment : BaseFragment(){
-    val args : MapFragmentArgs by navArgs()
 
 class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
 

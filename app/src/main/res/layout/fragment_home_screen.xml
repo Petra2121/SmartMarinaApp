@@ -17,9 +17,8 @@
         android:fontFamily="@font/san_francisco"
         android:gravity="center"
         android:maxLines="2"
-        android:text="number of passengers"
-        android:textAllCaps="true"
-        android:textColor="#0B0909"
+        android:text="Number of passengers"
+        android:textColor="@color/blue"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.078"
@@ -52,6 +51,8 @@
         android:layout_marginTop="91dp"
         android:background="@drawable/date_button"
         android:textColor="#000000"
+        android:fontFamily="@font/san_francisco"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.847"
@@ -66,6 +67,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/date_button"
         android:textColor="#000000"
+        android:fontFamily="@font/san_francisco"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.855"
@@ -90,7 +93,7 @@
 
     <TextView
         android:id="@+id/to"
-        android:layout_width="26dp"
+        android:layout_width="30dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/san_francisco"
         android:text="To"
@@ -103,19 +106,20 @@
         app:layout_constraintTop_toBottomOf="@+id/from"
         app:layout_constraintVertical_bias="0.139" />
 
+
     <Button
         android:id="@+id/ship"
         android:layout_width="155dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="156dp"
+        android:layout_marginBottom="128dp"
         android:background="@drawable/button_rectangle"
         android:fontFamily="@font/san_francisco"
-        android:text="ADD SHIP"
+        android:text="SELECT SHIP"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent" />
-
 
     <ImageButton
         android:id="@+id/profile"
@@ -142,8 +146,8 @@
         android:gravity="center"
         android:background="@drawable/date_button"
         android:inputType="number"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
         android:textSize="20dp"
         android:padding="7dp"
         android:hint="0"

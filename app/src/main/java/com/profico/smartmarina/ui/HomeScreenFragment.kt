@@ -44,8 +44,11 @@ class HomeScreenFragment : BaseFragment(), KoinComponent {
             if (dateOfArrival!!.text.equals("")) {
                 dateOfArrival.setError("Date od arrival is required!")
             }
-            else if (dateOfArrival!!.text.equals("")) {
-                dateOfArrival.setError("Date od department is required!")
+            else if (dateOfDeparture!!.text.equals("")) {
+                dateOfDeparture.setError("Date od department is required!")
+            }
+            else if(passengers!!.text.toString().equals("")){
+                passengers.setError("Please enter number of passengers!")
             }
             else {
                 findNavController().navigate(HomeScreenFragmentDirections.actionHomeScreenFragmentToShipsFragment("", dateOfArrival.text.toString(), dateOfDeparture.text.toString(), "", Integer.parseInt(passengers.text.toString())))

@@ -15,5 +15,4 @@ data class Boats(
     @Json(name = "name") val shipName : String ,
     @Json(name = "registration_number") val shipRegistration : String,
     @Json(name = "type") val shipType : String
-
 )

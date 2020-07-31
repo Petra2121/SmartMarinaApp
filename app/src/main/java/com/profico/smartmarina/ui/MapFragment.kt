@@ -24,45 +24,44 @@ import com.google.android.gms.maps.model.Marker
 /**
  * A simple [Fragment] subclass.
  */
-class MapFragment : BaseFragment(){
-    val args : MapFragmentArgs by navArgs()
+
 
 class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
-
+    val args : MapFragmentArgs by navArgs()
     override fun getLayout() = R.layout.fragment_map
     override fun hasToolbar() = false
 
-    lateinit var mapFragment : SupportMapFragment
-    var googleMap : GoogleMap? = null
+    lateinit var mapFragment: SupportMapFragment
+    var googleMap: GoogleMap? = null
 
-    var listOfDocs : List<Dokovi>? = null
-    var listOfMarkers : MutableList<Marker>? = null
+    var listOfDocs: List<Dokovi>? = null
+    var listOfMarkers: MutableList<Marker>? = null
 
     var lastClickedIndex = 0
 
     override fun setupView() {
 
-      /*  var free = Dokovi()*/
-
-
-        mapFragment =  childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync {
             googleMap = it
 
             val location1 = LatLng(43.500341, 16.460560)
 
             googleMap?.animateCamera(CameraUpdateFactory.newLatLngZoom(location1, 17f))
-
             googleMap?.setOnMarkerClickListener(this)
 
-            callAllDocks("2020-07-01", "2020-07-03", "Medium")
+            callAllDocks("2020-11-01", "2020-11-04", "Medium")
         }
 
         map_button.setOnClickListener {
+            /*******/
+            val dock_id = listOfDocs?.get(lastClickedIndex)?.id2
             findNavController().navigate(MapFragmentDirections.actionMapFragmentToPaymentFragment())
+            if (dock_id != null) {
+                sendReservation(args.passengerNumber, args.arrivalDate, args.departureDate, "5d7a514b5d2c12c7449be040", dock_id, )
+            }
         }
     }
-
 
     fun callAllDocks(startdate2: String, enddate2: String, boattype2: String) {
         Repository().callAllDocks(startdate2, enddate2, boattype2) {
@@ -71,14 +70,13 @@ class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
             listOfDocs?.forEachIndexed { index, dokovi ->
                 val location1 = LatLng(dokovi.lat2.toDouble(), dokovi.long2.toDouble())
 
-                googleMap?.addMarker(MarkerOptions().position(location1).title(dokovi.number2))?.let { marker ->
-                    marker.tag = index
+                googleMap?.addMarker(MarkerOptions().position(location1).title(dokovi.number2))
+                    ?.let { marker ->
+                        marker.tag = index
 
-                    listOfMarkers?.add(marker)
-                }
+                        listOfMarkers?.add(marker)
+                    }
             }
-
-            //listOfMarkers?.get(0)?.setIcon()
         }
     }
 
@@ -91,12 +89,12 @@ class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
             priceDock.text = price2
         }
 
-        //listOfMarkers?.get(currentIndex).setIcon()
-        //listOfMarkers?.get(lastClickedIndex).setIcon()
-
         lastClickedIndex = currentIndex
 
         return false
     }
+}
 
+fun sendReservation (numberofpassengers: Int, dateofarrival: String, dateofdeparture: String, userr:String, dockk:String, boatt:String){
+    Repository().sendReservation(numberofpassengers, dateofarrival, dateofdeparture, userr, dockk, boatt)
 }

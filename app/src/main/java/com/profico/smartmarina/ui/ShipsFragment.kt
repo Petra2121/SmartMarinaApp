@@ -70,6 +70,7 @@ class ShipsFragment : BaseFragment() {
     companion object {
         fun newInstance(): ShipsFragment = ShipsFragment()
     }
+
     fun getShipName() {
         Repository().getShipName("") {
             shipsAdapter?.notifyDataChange(it)

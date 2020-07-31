@@ -148,6 +148,8 @@
         <action
             android:id="@+id/action_mapFragment_to_paymentFragment"
             app:destination="@id/paymentFragment"
+            app:popUpTo="@id/shipsFragment"
+            app:popUpToInclusive="true"
             />
         <argument
             android:name="shipName2"

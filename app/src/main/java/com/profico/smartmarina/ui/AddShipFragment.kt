@@ -39,6 +39,7 @@ class AddShipFragment : BaseFragment() {
                 if (parent != null) {
                     val selectedSize = parent.getItemAtPosition(position).toString(); //spremljena velicina
                     Toast.makeText(parent.context, selectedSize, Toast.LENGTH_SHORT).show()
+
                     saveShip.setOnClickListener {
                         val shipNameA = shipName.text.toString()
                         val regnumb = shipRegistration.text.toString()

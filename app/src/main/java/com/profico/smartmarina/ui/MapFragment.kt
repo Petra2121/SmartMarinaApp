@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -77,8 +78,12 @@ class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
                 val location1 = LatLng(dokovi.lat2.toDouble(), dokovi.long2.toDouble())
 
                 googleMap?.addMarker(MarkerOptions().position(location1).title(dokovi.number2)
-                    .icon(activity?.let { it1 -> bitmapDescriptorFromVector(it1, R.drawable.ic_icon_not_clicked) }))?.let { marker ->
+                    .icon(bitmapDescriptorFromVector(requireContext(), R.drawable.ic_location_svg)))?.let { marker ->
                     marker.tag = index
+
+                    numberDock.text = dokovi.number2
+                    berthType2.text = dokovi.position2
+                    priceDock.text = dokovi.price2
 
                     listOfMarkers?.add(marker)
                 }
@@ -86,7 +91,7 @@ class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
             //icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN))
             //.icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_location));
             //listOfMarkers?.get(0)?.setIcon()
-           listOfMarkers?.get(0)?.setIcon(activity?.let { it1 -> bitmapDescriptorFromVector(it1, R.drawable.ic_icon_not_clicked) })
+           listOfMarkers?.get(0)?.setIcon(activity?.let { it1 -> bitmapDescriptorFromVector(it1, R.drawable.ic_location_clicked_svg) })
         }
     }
 
@@ -99,8 +104,8 @@ class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
             priceDock.text = price2
         }
 
-                listOfMarkers?.get(currentIndex)?.setIcon(activity?.let { it1 -> bitmapDescriptorFromVector(it1, R.drawable.ic_icon_clicked) })
-                listOfMarkers?.get(lastClickedIndex)?.setIcon(activity?.let { it1 -> bitmapDescriptorFromVector(it1, R.drawable.ic_icon_not_clicked) })
+        listOfMarkers?.get(currentIndex)?.setIcon(activity?.let { it1 -> bitmapDescriptorFromVector(it1, R.drawable.ic_location_clicked_svg) })
+        listOfMarkers?.get(lastClickedIndex)?.setIcon(activity?.let { it1 -> bitmapDescriptorFromVector(it1, R.drawable.ic_location_svg) })
         //listOfMarkers?.get(currentIndex).setIcon()
         //listOfMarkers?.get(lastClickedIndex).setIcon()
 

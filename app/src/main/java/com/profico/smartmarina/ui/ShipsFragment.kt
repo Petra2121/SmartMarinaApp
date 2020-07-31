@@ -6,9 +6,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.profico.smartmarina.ListAdapter
 import com.profico.smartmarina.R
 import com.profico.smartmarina.data.Repository
+import com.profico.smartmarina.data.model.Boats
 import kotlinx.android.synthetic.main.fragment_add_ship.view.*
 import kotlinx.android.synthetic.main.fragment_new_screen.view.*
 import kotlinx.android.synthetic.main.fragment_ships.*

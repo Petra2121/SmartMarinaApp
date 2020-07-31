@@ -11,7 +11,7 @@ import java.nio.file.Files.size
 
 class ListAdapter(
     private var list: List<Boats>? = null,
-    private val clickListener: (List<Boats>) -> Unit
+    private val clickListener: (Boats) -> Unit
    // val brodovi: Brodovi
 )
     : RecyclerView.Adapter<ShipsViewHolder>() {

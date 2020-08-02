@@ -3,17 +3,12 @@ package com.profico.smartmarina.ui
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Canvas
-import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.google.android.gms.maps.model.LatLng
@@ -22,10 +17,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.profico.smartmarina.R
 import com.profico.smartmarina.data.Repository
 import com.profico.smartmarina.data.model.Dokovi
-import com.profico.smartmarina.data.model.SendReservationResponseData
 import kotlinx.android.synthetic.main.fragment_map.*
-import org.koin.android.ext.android.bind
-import org.koin.core.KoinComponent
 
 /**
  * A simple [Fragment] subclass.
@@ -68,10 +60,9 @@ class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
         }
 
         map_button.setOnClickListener {
-            /*******/
-            val dock_id = listOfDocs?.get(lastClickedIndex)?.id2
-            if (dock_id != null) {
-                sendReservation(args.passengerNumber, args.arrivalDate, args.departureDate, "5d7a514b5d2c12c7449be040", dock_id, args.shipId)
+            val catchDockID = listOfDocs?.get(lastClickedIndex)?.id2
+            if (catchDockID != null) {
+                sendReservation(args.passengerNumber, args.arrivalDate, args.departureDate, "5d7a514b5d2c12c7449be040", catchDockID, args.shipId)
             }
         }
     }
@@ -90,12 +81,8 @@ class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
                     numberDock.text = dokovi.number2
                     berthType2.text = dokovi.position2
                     priceDock.text = dokovi.price2
-
                 }
             }
-            //icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN))
-            //.icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_location));
-            //listOfMarkers?.get(0)?.setIcon()
         }
     }
 
@@ -121,13 +108,6 @@ class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
         return false
     }
 
-    fun sendReservation (numberofpassengers: Int, dateofarrival: String, dateofdeparture: String, userr:String, dockk:String, boatt:String){
-        Repository().sendReservation(numberofpassengers, dateofarrival, dateofdeparture, userr, dockk, boatt) {
-            rez = it
-            findNavController().navigate(MapFragmentDirections.actionMapFragmentToPaymentFragment(rez))
-        }
-    }
-
     private fun  bitmapDescriptorFromVector(context: Context, vectorResId:Int):BitmapDescriptor {
         val vectorDrawable = ContextCompat.getDrawable(context, vectorResId);
         vectorDrawable!!.setBounds(0, 0, vectorDrawable.intrinsicWidth, vectorDrawable.intrinsicHeight);
@@ -136,6 +116,7 @@ class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
         vectorDrawable.draw(canvas);
         return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
+
     fun sendReservation (numberofpassengers: Int, dateofarrival: String, dateofdeparture: String, userr:String, dockk:String, boatt:String) {
         Repository().sendReservation(
             numberofpassengers,
@@ -144,6 +125,9 @@ class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
             userr,
             dockk,
             boatt
-        )
+        ) {
+            rez = it
+            findNavController().navigate(MapFragmentDirections.actionMapFragmentToPaymentFragment(rez))
+        }
     }
 }

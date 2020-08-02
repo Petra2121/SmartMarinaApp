@@ -2,17 +2,10 @@ package com.profico.smartmarina.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.profico.smartmarina.MyReservationsAdapter
 import com.profico.smartmarina.R
 import com.profico.smartmarina.data.Repository
 import com.profico.smartmarina.data.model.BoatData
-import com.profico.smartmarina.data.model.MyReservations
-import com.profico.smartmarina.data.model.Reservations
 import kotlinx.android.synthetic.main.fragment_my_reservations.*
 
 /**

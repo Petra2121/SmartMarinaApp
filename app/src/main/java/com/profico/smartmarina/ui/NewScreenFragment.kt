@@ -34,13 +34,11 @@ class NewScreenFragment : BaseFragment(), KoinComponent {
 
         availability.setOnClickListener {
             findNavController().navigate(NewScreenFragmentDirections.actionNewScreenFragmentToMapFragment(args.shipName2, args.arrivalDate, args.departureDate, args.shipSize, args.passengerNumber, args.shipId))
-
         }
 
         profile.setOnClickListener {
             findNavController().navigate(NewScreenFragmentDirections.actionNewScreenFragmentToProfileFragment())
         }
-
 
         //args.shipSize je odabrana velicina broda
 
@@ -48,10 +46,10 @@ class NewScreenFragment : BaseFragment(), KoinComponent {
                 shippp.text =args.shipName2
 
         if(args.arrivalDate!="")
-            dateA.text=args.arrivalDate.toString()
+            dateA.text=args.arrivalDate
 
         if(args.departureDate!="")
-            dateD.text=args.departureDate.toString()
+            dateD.text= args.departureDate
     }
 
 

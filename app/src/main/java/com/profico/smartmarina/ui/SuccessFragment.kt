@@ -18,6 +18,7 @@ class SuccessFragment : BaseFragment() {
 
     override fun hasToolbar() = false
 
+    
     override fun setupView() {
         getReservation(args.resId)
 

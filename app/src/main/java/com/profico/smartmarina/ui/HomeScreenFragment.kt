@@ -51,12 +51,10 @@ class HomeScreenFragment : BaseFragment(), KoinComponent {
         }
     }
 
-/***/
     fun View.hideKeyboard() {
         val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(windowToken, 0)
     }
-/***/
 
     private val dateSetListenerArrival =
         DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->

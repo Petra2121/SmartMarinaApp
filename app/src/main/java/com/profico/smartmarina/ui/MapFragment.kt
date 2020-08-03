@@ -111,7 +111,7 @@ class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
     fun sendReservation (numberofpassengers: Int, dateofarrival: String, dateofdeparture: String, userr:String, dockk:String, boatt:String){
         Repository().sendReservation(numberofpassengers, dateofarrival, dateofdeparture, userr, dockk, boatt) {
             rez = it
-            findNavController().navigate(MapFragmentDirections.actionMapFragmentToPaymentFragment(rez))
+            findNavController().navigate(MapFragmentDirections.actionMapFragmentToPaymentFragment(rez, args.arrivalDate, args.departureDate))
         }
     }
 

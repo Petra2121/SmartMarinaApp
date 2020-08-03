@@ -136,14 +136,5 @@ class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
         vectorDrawable.draw(canvas);
         return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
-    fun sendReservation (numberofpassengers: Int, dateofarrival: String, dateofdeparture: String, userr:String, dockk:String, boatt:String) {
-        Repository().sendReservation(
-            numberofpassengers,
-            dateofarrival,
-            dateofdeparture,
-            userr,
-            dockk,
-            boatt
-        )
-    }
+    
 }

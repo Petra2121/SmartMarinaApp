@@ -132,7 +132,9 @@
         android:id="@+id/myReservationsFragment"
         android:name="com.profico.smartmarina.ui.MyReservationsFragment"
         android:label="fragment_my_reservations"
-        tools:layout="@layout/fragment_my_reservations" />
+        tools:layout="@layout/fragment_my_reservations" >
+
+    </fragment>
     <fragment
         android:id="@+id/myInformationFragment"
         android:name="com.profico.smartmarina.ui.MyInformationFragment"
@@ -239,5 +241,6 @@
             android:name="shipId"
             app:argType="string"/>
     </fragment>
+
 
 </navigation>

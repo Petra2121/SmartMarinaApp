@@ -28,15 +28,16 @@
         android:id="@+id/myInfoProf"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:padding="15dp"
-        android:text="My Information"
-        android:textSize="22sp"
+        android:layout_marginTop="80dp"
         android:background="@drawable/shapecom"
         android:backgroundTint="@color/blue"
-        android:textColor="@color/white"
         android:fontFamily="@font/san_francisco"
+        android:padding="15dp"
+        android:text="My Information"
+        android:textColor="@color/white"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/myProfile" />
 
@@ -72,20 +73,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/myReservProf" />
 
+    <TextView
+        android:id="@+id/registration"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="72dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/san_francisco"
+        android:gravity="center"
+        android:text="Smart Marina\n Profico Summer Camp \n @2020"
+        android:textColor="@color/lightgrey"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/marinaInfoProf" />
+
     <Button
         android:id="@+id/log_out"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="196dp"
         android:background="@android:color/transparent"
         android:fontFamily="@font/san_francisco"
         android:text="Log out"
         android:textColor="@color/colorPrimary"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/marinaInfoProf" />
 

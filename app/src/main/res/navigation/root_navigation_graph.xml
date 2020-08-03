@@ -181,6 +181,9 @@
         <action
             android:id="@+id/action_paymentFragment_to_successFragment"
             app:destination="@id/successFragment" />
+        <action
+            android:id="@+id/action_paymentFragment_to_animationFragment"
+            app:destination="@id/animationFragment" />
         <argument
             android:name="resId"
             app:argType="string"/>
@@ -225,6 +228,27 @@
             app:argType="integer"/>
         <argument
             android:name="shipId"
+            app:argType="string"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/animationFragment"
+        android:name="com.profico.smartmarina.ui.AnimationFragment"
+        android:label="fragment_animation"
+        tools:layout="@layout/fragment_animation" >
+        <action
+            android:id="@+id/action_animationFragment_to_successFragment"
+            app:destination="@id/successFragment"
+            app:enterAnim="@anim/slide_in_right"
+            />
+        <argument
+            android:name="resId"
+            app:argType="string"/>
+        <argument
+            android:name="arrivalDate"
+            app:argType="string"/>
+        <argument
+            android:name="departureDate"
             app:argType="string"/>
     </fragment>
 

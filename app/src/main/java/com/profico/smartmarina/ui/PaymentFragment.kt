@@ -39,7 +39,7 @@ class PaymentFragment : BaseFragment() {
                 cardName.error = "First name is required!";
             }
             else {
-                findNavController().navigate(PaymentFragmentDirections.actionPaymentFragmentToSuccessFragment(args.resId))
+                findNavController().navigate(PaymentFragmentDirections.actionPaymentFragmentToAnimationFragment(args.resId, "2020-09-01", "2020-09-01"))
             }
         }
         pickCardDate()

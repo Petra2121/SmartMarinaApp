@@ -81,4 +81,5 @@ dependencies {
     kapt "com.squareup.moshi:moshi-kotlin-codegen:1.9.2"
 
     implementation "com.google.code.gson:gson:2.8.0"
+    implementation "com.airbnb.android:lottie:3.4.0"
 }

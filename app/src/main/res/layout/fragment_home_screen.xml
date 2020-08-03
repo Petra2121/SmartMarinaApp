@@ -29,9 +29,9 @@
         android:id="@+id/chooseDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="20dp"
         android:fontFamily="@font/san_francisco"
-        android:text="SELECT DATE"
+        android:text="SELECT DATE:"
         android:textColor="@color/blue"
         android:textSize="29sp"
         android:textAllCaps="true"
@@ -106,26 +106,30 @@
         app:layout_constraintTop_toBottomOf="@+id/from"
         app:layout_constraintVertical_bias="0.139" />
 
-
     <Button
         android:id="@+id/ship"
-        android:layout_width="155dp"
-        android:layout_height="55dp"
-        android:layout_marginBottom="128dp"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/button_rectangle"
         android:fontFamily="@font/san_francisco"
         android:text="SELECT SHIP"
+        android:paddingVertical="10dp"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 
     <ImageButton
         android:id="@+id/profile"
-        android:layout_width="53dp"
-        android:layout_height="53dp"
-        android:layout_margin="5dp"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
         android:layout_marginBottom="138dp"
         android:background="@color/white"
         android:clickable="true"

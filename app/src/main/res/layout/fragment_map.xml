@@ -175,13 +175,14 @@
 
     <Button
         android:id="@+id/map_button"
-        android:layout_width="250dp"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/button_rectangle"
         android:fontFamily="@font/san_francisco"
         android:layout_marginBottom="15dp"
         android:text="Payment"
+        android:paddingVertical="10dp"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

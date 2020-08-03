@@ -1,16 +1,14 @@
-package com.profico.smartmarina
+package com.profico.smartmarina.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.profico.smartmarina.data.model.*
-import java.nio.file.Files.size
 
 class MyReservationsAdapter(
     private var list: List<MyReservations>? = null,
     private val clickListener: (List<MyReservations>) -> Unit
-    // val brodovi: Brodovi
-)
+    )
     : RecyclerView.Adapter<MyReservationsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyReservationsViewHolder {
@@ -25,9 +23,6 @@ class MyReservationsAdapter(
                 clickListener.invoke(listOf(ship))
             }
         }
-        // val imena = brodovi.data.get(position)
-
-        //holder.itemView.recyclerShips?.text= imena.nam
     }
 
     override fun getItemCount(): Int {
@@ -41,6 +36,5 @@ class MyReservationsAdapter(
         this.list = list
         notifyDataSetChanged()
     }
-
 
 }

@@ -1,18 +1,12 @@
 package com.profico.smartmarina.ui
 
 import android.app.DatePickerDialog
-import android.os.Bundle
 import android.text.TextUtils
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.profico.smartmarina.R
-import kotlinx.android.synthetic.main.fragment_home_screen.*
 import kotlinx.android.synthetic.main.fragment_payment.*
-import org.w3c.dom.Text
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -32,17 +26,17 @@ class PaymentFragment : BaseFragment() {
 
     override fun setupView() {
         btn_pay.setOnClickListener {
-            if( TextUtils.isEmpty(cardNumber.getText())) {
-                cardNumber.setError("Card number is required!");
+            if( TextUtils.isEmpty(cardNumber.text)) {
+                cardNumber.error = "Card number is required!";
             }
-            else if( TextUtils.isEmpty(cardCcv.getText())) {
-                cardCcv.setError("CCV is required!");
+            else if( TextUtils.isEmpty(cardCcv.text)) {
+                cardCcv.error = "CCV is required!";
             }
-            else if (cardDate!!.text.equals("")){
-                cardDate.setError("Date is required!")
+            else if (cardDate!!.text == ""){
+                cardDate.error = "Date is required!"
             }
-            else if( TextUtils.isEmpty(cardName.getText())) {
-                cardName.setError("First name is required!");
+            else if( TextUtils.isEmpty(cardName.text)) {
+                cardName.error = "First name is required!";
             }
             else {
                 findNavController().navigate(PaymentFragmentDirections.actionPaymentFragmentToSuccessFragment(args.resId))
@@ -72,9 +66,9 @@ class PaymentFragment : BaseFragment() {
     }
 
     private fun updateCardDateInView() {
-        val myFormat = "dd/MM/yyyy"
+        val myFormat = "dd-MM-yyyy"
         val sdf = SimpleDateFormat(myFormat, Locale.ITALY)
-        cardDate!!.text = sdf.format(cal.getTime())
+        cardDate!!.text = sdf.format(cal.time)
     }
 }
 

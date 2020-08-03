@@ -3,16 +3,11 @@ package com.profico.smartmarina.ui
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.profico.smartmarina.ShipsViewHolder
 import com.profico.smartmarina.data.model.Boats
-import com.profico.smartmarina.data.model.DataShips
-import com.profico.smartmarina.data.model.Reservations
-import java.nio.file.Files.size
 
 class ListAdapter(
     private var list: List<Boats>? = null,
     private val clickListener: (Boats) -> Unit
-   // val brodovi: Brodovi
 )
     : RecyclerView.Adapter<ShipsViewHolder>() {
 

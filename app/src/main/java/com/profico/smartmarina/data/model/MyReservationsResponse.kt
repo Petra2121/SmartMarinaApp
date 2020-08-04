@@ -27,6 +27,7 @@ data class MyReservations(
     @Json(name = "boat") val boat : BoatData
 
     )
+
 data class BoatData(
     @Json(name = "_id") val boatId : String,
     @Json(name = "name") val boatName : String ,

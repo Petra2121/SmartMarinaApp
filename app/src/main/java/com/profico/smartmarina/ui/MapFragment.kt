@@ -108,6 +108,13 @@ class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
         return false
     }
 
+    fun sendReservation (numberofpassengers: Int, dateofarrival: String, dateofdeparture: String, userr:String, dockk:String, boatt:String){
+        Repository().sendReservation(numberofpassengers, dateofarrival, dateofdeparture, userr, dockk, boatt) {
+            rez = it
+            findNavController().navigate(MapFragmentDirections.actionMapFragmentToPaymentFragment(rez, args.arrivalDate, args.departureDate))
+        }
+    }
+
     private fun  bitmapDescriptorFromVector(context: Context, vectorResId:Int):BitmapDescriptor {
         val vectorDrawable = ContextCompat.getDrawable(context, vectorResId);
         vectorDrawable!!.setBounds(0, 0, vectorDrawable.intrinsicWidth, vectorDrawable.intrinsicHeight);
@@ -117,17 +124,4 @@ class MapFragment : BaseFragment(), GoogleMap.OnMarkerClickListener {
         return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
 
-    fun sendReservation (numberofpassengers: Int, dateofarrival: String, dateofdeparture: String, userr:String, dockk:String, boatt:String) {
-        Repository().sendReservation(
-            numberofpassengers,
-            dateofarrival,
-            dateofdeparture,
-            userr,
-            dockk,
-            boatt
-        ) {
-            rez = it
-            findNavController().navigate(MapFragmentDirections.actionMapFragmentToPaymentFragment(rez))
-        }
-    }
 }

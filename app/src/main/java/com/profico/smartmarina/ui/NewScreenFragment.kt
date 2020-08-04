@@ -40,8 +40,6 @@ class NewScreenFragment : BaseFragment(), KoinComponent {
             findNavController().navigate(NewScreenFragmentDirections.actionNewScreenFragmentToProfileFragment())
         }
 
-        //args.shipSize je odabrana velicina broda
-
         if (args.shipName2 != "")
                 shippp.text =args.shipName2
 
@@ -51,7 +49,4 @@ class NewScreenFragment : BaseFragment(), KoinComponent {
         if(args.departureDate!="")
             dateD.text= args.departureDate
     }
-
-
-
 }

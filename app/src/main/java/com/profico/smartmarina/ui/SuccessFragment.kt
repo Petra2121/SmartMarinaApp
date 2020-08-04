@@ -18,7 +18,7 @@ class SuccessFragment : BaseFragment() {
 
     override fun hasToolbar() = false
 
-    
+
     override fun setupView() {
         getReservation(args.resId)
 
@@ -34,9 +34,13 @@ class SuccessFragment : BaseFragment() {
             reservationNum2.text = rezervacija!!.id2
             boatReg2.text = rezervacija!!.boatRegistrationNumber2
             dockID2.text = rezervacija!!.dockNumber2
-            dateASuc2.text = rezervacija!!.dateOfArrival2
-            dateDSuc2.text = rezervacija!!.dateOfDeparture2
-            priceSuc2.text = rezervacija!!.totalPrice2
+            dateASuc2.text = args.arrivalDate
+            dateDSuc2.text = args.departureDate
+//            dateASuc2.text = rezervacija!!.dateOfArrival2.subSequence(0,10)
+//            dateDSuc2.text = rezervacija!!.dateOfDeparture2.subSequence(0,10)
+            priceSuc2.text = rezervacija!!.totalPrice2+"$"
+
+
         }
     }
 }

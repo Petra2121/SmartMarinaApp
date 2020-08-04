@@ -29,14 +29,15 @@
         android:id="@+id/reservationNum"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/san_francisco"
         android:text="Reservation number:"
-        android:textStyle="bold"
         android:textColor="@color/blue"
         android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/success" />
 
@@ -44,15 +45,15 @@
         android:id="@+id/reservationNum2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/san_francisco"
         android:gravity="center_horizontal"
         android:text="584261"
         android:textColor="@color/blue"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/reservationNum"
-        app:layout_constraintTop_toBottomOf="@+id/success" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reservationNum" />
 
     <TextView
         android:id="@+id/boatReg"
@@ -61,56 +62,60 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/san_francisco"
         android:text="Boat registration:"
-        android:textStyle="bold"
         android:textColor="@color/blue"
         android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reservationNum" />
+        app:layout_constraintTop_toBottomOf="@+id/reservationNum2" />
 
     <TextView
         android:id="@+id/boatReg2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/san_francisco"
         android:gravity="center_horizontal"
         android:text="5ABC61"
         android:textColor="@color/blue"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/boatReg"
-        app:layout_constraintTop_toBottomOf="@+id/reservationNum2" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boatReg" />
 
     <TextView
         android:id="@+id/dockID"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/san_francisco"
         android:text="Dock:"
-        android:textStyle="bold"
+        android:gravity="center_horizontal"
         android:textColor="@color/blue"
         android:textSize="22sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boatReg" />
+        app:layout_constraintTop_toBottomOf="@+id/boatReg2" />
 
     <TextView
         android:id="@+id/dockID2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/san_francisco"
         android:gravity="center_horizontal"
         android:text="100"
         android:textColor="@color/blue"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/dockID"
-        app:layout_constraintTop_toBottomOf="@+id/boatReg2" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dockID" />
 
     <TextView
         android:id="@+id/dateASuc"
@@ -119,91 +124,97 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/san_francisco"
         android:text="Date of arrival:"
-        android:textStyle="bold"
+        android:gravity="center_horizontal"
         android:textColor="@color/blue"
         android:textSize="22sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dockID" />
+        app:layout_constraintTop_toBottomOf="@+id/dockID2" />
 
     <TextView
         android:id="@+id/dateASuc2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/san_francisco"
         android:gravity="center_horizontal"
         android:text="10.05.2020."
         android:textColor="@color/blue"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dockID2" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateASuc" />
 
     <TextView
         android:id="@+id/dateDSuc"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/san_francisco"
         android:text="Date of departure:"
+        android:gravity="center_horizontal"
         android:textColor="@color/blue"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dockID" />
+        app:layout_constraintTop_toBottomOf="@+id/dateASuc2" />
 
     <TextView
         android:id="@+id/dateDSuc2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="7dp"
         android:fontFamily="@font/san_francisco"
         android:gravity="center_horizontal"
         android:text="07.06.2020."
         android:textColor="@color/blue"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dockID2" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateDSuc" />
 
     <TextView
         android:id="@+id/priceSuc"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/san_francisco"
         android:text="Price:"
         android:textColor="@color/blue"
         android:textSize="22sp"
         android:textStyle="bold"
+        android:gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateDSuc" />
+        app:layout_constraintTop_toBottomOf="@+id/dateDSuc2" />
 
     <TextView
         android:id="@+id/priceSuc2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/san_francisco"
         android:gravity="center_horizontal"
         android:text="100$"
         android:textColor="@color/blue"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/priceSuc"
-        app:layout_constraintTop_toBottomOf="@+id/dateDSuc2" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceSuc" />
 
     <Button
         android:id="@+id/ok_button"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="128dp"
+        android:layout_marginBottom="28dp"
         android:background="@drawable/button_rectangle"
         android:fontFamily="@font/san_francisco"
         android:text="ok"

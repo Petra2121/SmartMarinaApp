@@ -187,6 +187,12 @@
         <argument
             android:name="resId"
             app:argType="string"/>
+        <argument
+            android:name="arrivalDate"
+            app:argType="string"/>
+        <argument
+            android:name="departureDate"
+            app:argType="string"/>
     </fragment>
     <fragment
         android:id="@+id/successFragment"
@@ -198,6 +204,12 @@
             app:destination="@id/profileFragment" />
         <argument
             android:name="resId"
+            app:argType="string"/>
+        <argument
+            android:name="arrivalDate"
+            app:argType="string"/>
+        <argument
+            android:name="departureDate"
             app:argType="string"/>
     </fragment>
     <fragment
